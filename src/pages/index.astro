@@ -1,0 +1,122 @@
+---
+import BaseLayout from "../components/BaseLayout.astro";
+import FaqList from "../components/FaqList.astro";
+import { comingSoon, pages } from "../data/pages.mjs";
+import catalog from "../data/catalog.json";
+import { absoluteUrl, href } from "../lib/paths";
+
+const listedCompanies = catalog.companies.filter((company) => company.publicPrices === "listed");
+const homeFaqs = [
+  {
+    question: "Who is this for?",
+    answer:
+      "Parents and party planners comparing published rental prices in College Station and Bryan.",
+  },
+  {
+    question: "Where do the numbers come from?",
+    answer:
+      "Each company's own public website, read on Nov 19, 2026. Third-party price lists were not used. Nothing was estimated.",
+  },
+  {
+    question: "What is still coming?",
+    answer:
+      "Graduation party rentals, tents, tables and chairs, and a page for the cheapest backyard birthday bounce house. Those pages are not up yet. This site does not guess those prices.",
+  },
+];
+
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: "Party Rental Price Check",
+    url: absoluteUrl("/"),
+    description:
+      "Dated price comparison of party rental companies that publish prices for College Station and Bryan, Texas.",
+    publisher: {
+      "@type": "Organization",
+      name: "Party Rental Price Check",
+      url: absoluteUrl("/"),
+    },
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: homeFaqs.map((item) => ({
+      "@type": "Question",
+      name: item.question,
+      acceptedAnswer: { "@type": "Answer", text: item.answer },
+    })),
+  },
+];
+---
+
+<BaseLayout
+  title="Party rental prices in College Station and Bryan"
+  description="Compare published bounce house, water slide, and party rental prices in College Station and Bryan, Texas. Checked Nov 19, 2026."
+  jsonLd={jsonLd}
+>
+  <section class="hero">
+    <div>
+      <p class="eyebrow">College Station and Bryan</p>
+      <h1>Party rental prices, checked.</h1>
+      <p class="lede">
+        Compare bounce houses and water slides from local companies that post their own prices.
+        Every number links to the company page and shows the day it was checked.
+      </p>
+    </div>
+    <aside class="notice">
+      <p>
+        <strong>{catalog.prices.length} published prices</strong> from {listedCompanies.length} companies,
+        read on Nov 19, 2026. A price can change after that day. Call the company before you book.
+      </p>
+      <p class="small">
+        This site is not a rental company. You book with the company, not here.
+      </p>
+    </aside>
+  </section>
+
+  <h2>Start with the list you need</h2>
+  <div class="card-grid two">
+    {
+      pages.map((page) => (
+        <article class="card">
+          <p class="eyebrow">{page.eyebrow}</p>
+          <h3>{page.h1}</h3>
+          <p>{page.lede}</p>
+          <a class="more" href={href(`/${page.slug}`)}>
+            {page.kind === "prices" ? "See the prices" : "See what's included"}
+          </a>
+        </article>
+      ))
+    }
+  </div>
+
+  <h2>Coming soon</h2>
+  <p class="prose">
+    These pages are not written yet. No prices are shown for them.
+  </p>
+  <ul class="coming-soon">
+    {
+      comingSoon.map((title) => (
+        <li>
+          <span>{title}</span>
+          <span class="pill soon">Coming soon</span>
+        </li>
+      ))
+    }
+  </ul>
+
+  <FaqList title="Common questions" items={homeFaqs} />
+
+  <h2>How prices get on this site</h2>
+  <div class="prose stack">
+    <p>
+      A price is listed only when that company's own page showed it on Nov 19, 2026. The row links
+      the page. If the page did not show a price, the row says Unverified and no number is filled in.
+      If size or rental window was blank, the cell says Not listed.
+    </p>
+    <p>
+      <a href={href("/about")}>Read the full note on how this site checks prices.</a>
+    </p>
+  </div>
+</BaseLayout>

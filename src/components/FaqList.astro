@@ -1,0 +1,36 @@
+---
+import { href } from "../lib/paths";
+
+export interface FaqItem {
+  question: string;
+  answer: string;
+  href?: string;
+  linkLabel?: string;
+}
+
+interface Props {
+  items: FaqItem[];
+  title?: string;
+}
+
+const { items, title = "Common questions" } = Astro.props;
+---
+
+<section class="faq" aria-label={title}>
+  <h2>{title}</h2>
+  {
+    items.map((item) => (
+      <details class="faq-item">
+        <summary>{item.question}</summary>
+        <div class="faq-body">
+          <p>{item.answer}</p>
+          {item.href && item.linkLabel && (
+            <p>
+              <a href={item.href.startsWith("/") ? href(item.href) : item.href}>{item.linkLabel}</a>
+            </p>
+          )}
+        </div>
+      </details>
+    ))
+  }
+</section>

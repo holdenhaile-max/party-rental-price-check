@@ -1,0 +1,13 @@
+---
+import BaseLayout from "../components/BaseLayout.astro";
+import { href } from "../lib/paths";
+---
+
+<BaseLayout
+  title="Page not found"
+  description="That page is not on Party Rental Price Check."
+>
+  <h1>That page is not here.</h1>
+  <p class="lede">The price lists that are up are linked from the home page.</p>
+  <p><a href={href("/")}>Back to Party Rental Price Check</a></p>
+</BaseLayout>

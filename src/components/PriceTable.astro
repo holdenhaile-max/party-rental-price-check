@@ -1,0 +1,148 @@
+---
+import { checkedPhrase, listed, money } from "../lib/format";
+import { priceSortValue, sortByPrice, textSortValue } from "../lib/sort-keys.mjs";
+import { href } from "../lib/paths";
+import catalog from "../data/catalog.json";
+
+interface PriceRow {
+  company: string;
+  item: string;
+  category: string;
+  size: string;
+  price: number | null;
+  rentalWindow: string;
+  feeNotes: string;
+  sourceUrl: string;
+  checkedDate: string;
+  status: string;
+  notes: string;
+}
+
+interface Props {
+  rows: PriceRow[];
+  caption: string;
+}
+
+const { caption } = Astro.props;
+const rows = sortByPrice(Astro.props.rows) as PriceRow[];
+const companyId = new Map(catalog.companies.map((company) => [company.name, company.id]));
+---
+
+{
+  rows.length === 0 ? (
+    <p class="notice">No published prices match this page.</p>
+  ) : (
+    <div class="table-scroll">
+      <p class="small muted checked-line">
+        Each price shows the day it was checked. Open the source page to confirm. Rows without a price
+        say Unverified.
+      </p>
+      <table data-sortable="true">
+        <caption>
+          {caption} ({rows.length} {rows.length === 1 ? "row" : "rows"})
+        </caption>
+        <thead>
+          <tr>
+            <th scope="col" aria-sort="none">
+              <button type="button" class="sort-button" data-sort="company" data-sort-name="company">
+                Company
+              </button>
+            </th>
+            <th scope="col" aria-sort="none">
+              <button type="button" class="sort-button" data-sort="item" data-sort-name="item">
+                Item
+              </button>
+            </th>
+            <th scope="col" aria-sort="none">
+              <button type="button" class="sort-button" data-sort="size" data-sort-name="size">
+                Size
+              </button>
+            </th>
+            <th scope="col" aria-sort="none">
+              <button type="button" class="sort-button" data-sort="window" data-sort-name="rental window">
+                Rental window
+              </button>
+            </th>
+            <th scope="col">Delivery and fees</th>
+            <th scope="col" aria-sort="ascending">
+              <button type="button" class="sort-button" data-sort="price" data-sort-name="price">
+                Price
+              </button>
+            </th>
+            <th scope="col">Checked</th>
+            <th scope="col">Source</th>
+          </tr>
+        </thead>
+        <tbody>
+          {rows.map((row, index) => {
+            const price = priceSortValue(row.price, row.status);
+            const company = textSortValue(row.company);
+            const item = textSortValue(row.item);
+            const size = textSortValue(row.size);
+            const windowValue = textSortValue(row.rentalWindow);
+            const unverified = row.status === "unverified";
+            const id = companyId.get(row.company);
+            return (
+              <tr
+                class:list={{ "is-unverified": unverified }}
+                data-original={index}
+                data-company={company.missing ? undefined : company.value}
+                data-company-missing={String(company.missing)}
+                data-item={item.missing ? undefined : item.value}
+                data-item-missing={String(item.missing)}
+                data-size={size.missing ? undefined : size.value}
+                data-size-missing={String(size.missing)}
+                data-window={windowValue.missing ? undefined : windowValue.value}
+                data-window-missing={String(windowValue.missing)}
+                data-price={price.missing ? undefined : String(price.value)}
+                data-price-missing={String(price.missing)}
+                data-price-type="number"
+              >
+                <th scope="row">
+                  {id ? (
+                    <a href={href(`/whats-included/#${id}`)}>{row.company}</a>
+                  ) : (
+                    row.company
+                  )}
+                </th>
+                <td>
+                  {row.item}
+                  {row.notes && <div class="small muted">{row.notes}</div>}
+                </td>
+                <td>{listed(row.size)}</td>
+                <td>{listed(row.rentalWindow)}</td>
+                <td class="fee-note">{listed(row.feeNotes)}</td>
+                <td>
+                  {unverified ? (
+                    <span class="pill unverified">Unverified</span>
+                  ) : row.price == null ? (
+                    "Not listed"
+                  ) : (
+                    money(row.price)
+                  )}
+                </td>
+                <td>
+                  <time datetime={row.checkedDate}>{checkedPhrase(row.checkedDate)}</time>
+                </td>
+                <td>
+                  <a class="source" href={row.sourceUrl} rel="noopener noreferrer">
+                    Company page
+                  </a>
+                </td>
+              </tr>
+            );
+          })}
+        </tbody>
+      </table>
+      <p class="sort-note">
+        Sorted by price, lowest first. Select a column to sort by company, item, size, rental window,
+        or price. Rows without a price stay at the bottom.
+      </p>
+    </div>
+  )
+}
+
+<script>
+  import { initSortableTables } from "../scripts/sort-table.mjs";
+  initSortableTables();
+</script>

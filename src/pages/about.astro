@@ -1,0 +1,60 @@
+---
+import BaseLayout from "../components/BaseLayout.astro";
+import { absoluteUrl, href } from "../lib/paths";
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "AboutPage",
+  name: "About Party Rental Price Check",
+  url: absoluteUrl("/about"),
+  description:
+    "How Party Rental Price Check reads party rental prices for College Station and Bryan, and what it does not guess.",
+  isPartOf: {
+    "@type": "WebSite",
+    name: "Party Rental Price Check",
+    url: absoluteUrl("/"),
+  },
+};
+---
+
+<BaseLayout
+  title="About this price check"
+  description="Party Rental Price Check lists prices from each company's own website. Here is how a price gets on the page, and what is left blank."
+  jsonLd={jsonLd}
+>
+  <p class="crumbs"><a href={href("/")}>Home</a> / About</p>
+  <p class="eyebrow">About</p>
+  <h1>Prices from the company sites, dated.</h1>
+  <div class="prose stack">
+    <p>
+      Party Rental Price Check compares published party rental prices for College Station and Bryan,
+      Texas. It is not a rental company, and it is not either city. You cannot book or pay here.
+    </p>
+    <h2>How a price gets on the page</h2>
+    <p>
+      A price, size, or rental window is listed only when a company's own public page stated it.
+      The row links that page and says Checked Nov 19, 2026. That is the day the page was read.
+      Third-party price lists were not used.
+    </p>
+    <p>
+      If the page did not show a price, the row says Unverified and no number is filled in. If a
+      field was blank, the cell says Not listed. When a company lists more than one length of time,
+      each length is its own row so the prices can be sorted.
+    </p>
+    <p>
+      Some pages say "from" or "starting at." That wording is kept in the rental window. The dollar
+      amount is the figure printed on the page, not a guess at the final bill.
+    </p>
+    <h2>What this site does not do</h2>
+    <ul class="clean">
+      <li>No estimated prices and no filled-in blanks.</li>
+      <li>No reviews, ratings, or testimonials.</li>
+      <li>No paid links. If that ever changes, the link will say Sponsored.</li>
+      <li>No accounts, booking, or payment.</li>
+    </ul>
+    <p>
+      A price can change after the checked date. Call the company to confirm the price, the date,
+      and any delivery fee before you book.
+    </p>
+  </div>
+</BaseLayout>

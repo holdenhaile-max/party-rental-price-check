@@ -1,0 +1,47 @@
+---
+import { href, sitePath } from "../lib/paths";
+import { pages } from "../data/pages.mjs";
+
+const path = sitePath(Astro.url.pathname);
+const links = [
+  ...pages.map((page) => ({ href: `/${page.slug}`, label: page.nav })),
+  { href: "/about", label: "About" },
+];
+
+function current(linkHref: string) {
+  return path === linkHref;
+}
+---
+
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href={href("/")}>
+      <img class="brand-logo" src={href("/logo.svg")} width="36" height="36" alt="" />
+      <span>
+        <span class="brand-name">Party Rental Price Check</span>
+        <span class="brand-kicker">Party rental prices, checked.</span>
+      </span>
+    </a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-menu">
+      Menu
+    </button>
+    <nav id="site-menu" class="site-menu" aria-label="Primary">
+      {
+        links.map((link) => (
+          <a href={href(link.href)} aria-current={current(link.href) ? "page" : undefined}>
+            {link.label}
+          </a>
+        ))
+      }
+    </nav>
+  </div>
+</header>
+
+<script>
+  const button = document.querySelector(".nav-toggle");
+  const menu = document.getElementById("site-menu");
+  button?.addEventListener("click", () => {
+    const open = menu?.classList.toggle("is-open");
+    button.setAttribute("aria-expanded", open ? "true" : "false");
+  });
+</script>

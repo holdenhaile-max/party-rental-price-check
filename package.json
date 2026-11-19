@@ -1,0 +1,21 @@
+{
+  "name": "party-rental-price-check",
+  "type": "module",
+  "version": "1.0.0",
+  "engines": {
+    "node": ">=22.23.4"
+  },
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "check:copy": "node scripts/check-copy.mjs",
+    "sync:prices": "node scripts/sync-prices.mjs",
+    "test": "node --test tests/*.test.mjs",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/sitemap": "^3.7.6",
+    "astro": "^7.4.13"
+  }
+}

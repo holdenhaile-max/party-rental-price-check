@@ -1,0 +1,23 @@
+---
+import { href } from "../lib/paths";
+import { pages } from "../data/pages.mjs";
+---
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <p>
+      Party Rental Price Check lists published party rental prices for College Station and Bryan,
+      Texas. It is not a rental company. Prices come from each company's own website and can change.
+      Call before you book.
+    </p>
+    <p>No links are paid. This site does not take bookings or payments, and it does not use trackers.</p>
+    <div class="footer-links">
+      <a href={href("/about")}>About and how prices are checked</a>
+      {
+        pages.map((page) => (
+          <a href={href(`/${page.slug}`)}>{page.title}</a>
+        ))
+      }
+    </div>
+  </div>
+</footer>

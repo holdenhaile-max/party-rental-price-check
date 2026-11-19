@@ -1,0 +1,90 @@
+---
+import { servesLabel } from "../lib/format";
+import { textSortValue } from "../lib/sort-keys.mjs";
+
+interface Company {
+  id: string;
+  name: string;
+  website: string;
+  booking: string;
+  serves: string[];
+  serviceArea: string;
+  delivery: string;
+  setup: string;
+  timeWindow: string;
+  fees: string;
+  publicPrices: string;
+}
+
+interface Props {
+  companies: Company[];
+  caption: string;
+}
+
+const companies = [...Astro.props.companies].sort((a, b) => a.name.localeCompare(b.name, "en"));
+const { caption } = Astro.props;
+---
+
+<div class="table-scroll">
+  <table data-sortable="true">
+    <caption>
+      {caption} ({companies.length} {companies.length === 1 ? "company" : "companies"})
+    </caption>
+    <thead>
+      <tr>
+        <th scope="col" aria-sort="ascending">
+          <button type="button" class="sort-button" data-sort="company" data-sort-name="company">
+            Company
+          </button>
+        </th>
+        <th scope="col" aria-sort="none">
+          <button type="button" class="sort-button" data-sort="serves" data-sort-name="service area">
+            Serves
+          </button>
+        </th>
+        <th scope="col">Delivery</th>
+        <th scope="col">Setup</th>
+        <th scope="col">Time window</th>
+        <th scope="col">Fees</th>
+        <th scope="col">How to book</th>
+      </tr>
+    </thead>
+    <tbody>
+      {
+        companies.map((company, index) => {
+          const name = textSortValue(company.name);
+          const serves = textSortValue(servesLabel(company.serves));
+          return (
+            <tr
+              id={company.id}
+              data-original={index}
+              data-company={name.missing ? undefined : name.value}
+              data-company-missing={String(name.missing)}
+              data-serves={serves.missing ? undefined : serves.value}
+              data-serves-missing={String(serves.missing)}
+            >
+              <th scope="row">
+                <a href={company.website} rel="noopener noreferrer">
+                  {company.name}
+                </a>
+                <div class="small muted">{company.serviceArea}</div>
+              </th>
+              <td>{servesLabel(company.serves)}</td>
+              <td class="fee-note">{company.delivery}</td>
+              <td class="fee-note">{company.setup}</td>
+              <td class="fee-note">{company.timeWindow}</td>
+              <td class="fee-note">{company.fees}</td>
+              <td class="fee-note">{company.booking}</td>
+            </tr>
+          );
+        })
+      }
+    </tbody>
+  </table>
+  <p class="sort-note">Sort by company or by where they say they deliver. Fee cells use the company site's own wording.</p>
+</div>
+
+<script>
+  import { initSortableTables } from "../scripts/sort-table.mjs";
+  initSortableTables();
+</script>

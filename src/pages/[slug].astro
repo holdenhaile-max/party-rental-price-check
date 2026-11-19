@@ -1,0 +1,131 @@
+---
+import BaseLayout from "../components/BaseLayout.astro";
+import CompanyTable from "../components/CompanyTable.astro";
+import FaqList from "../components/FaqList.astro";
+import PriceTable from "../components/PriceTable.astro";
+import { pages } from "../data/pages.mjs";
+import catalog from "../data/catalog.json";
+import { filterPrices, unverifiedPrices } from "../lib/filter.mjs";
+import { absoluteUrl, href } from "../lib/paths";
+
+export function getStaticPaths() {
+  return pages.map((page) => ({
+    params: { slug: page.slug },
+    props: { page },
+  }));
+}
+
+const { page } = Astro.props;
+const rows =
+  page.kind === "prices"
+    ? filterPrices(catalog.prices, catalog.companies, {
+        categories: page.categories,
+        city: page.city,
+      })
+    : [];
+const listedCompanies = catalog.companies.filter((company) => company.publicPrices === "listed");
+const unlistedCompanies = catalog.companies.filter((company) => company.publicPrices !== "listed");
+const unverified = unverifiedPrices(catalog.prices);
+
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    name: page.title,
+    url: absoluteUrl(`/${page.slug}`),
+    description: page.description,
+    isPartOf: {
+      "@type": "WebSite",
+      name: "Party Rental Price Check",
+      url: absoluteUrl("/"),
+    },
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: page.faqs.map((item: { question: string; answer: string }) => ({
+      "@type": "Question",
+      name: item.question,
+      acceptedAnswer: { "@type": "Answer", text: item.answer },
+    })),
+  },
+];
+---
+
+<BaseLayout title={page.title} description={page.description} jsonLd={jsonLd}>
+  <p class="crumbs"><a href={href("/")}>Home</a> / {page.h1}</p>
+  <p class="eyebrow">{page.eyebrow}</p>
+  <h1>{page.h1}</h1>
+  <p class="lede">{page.lede}</p>
+
+  {
+    page.kind === "prices" && (
+      <PriceTable rows={rows} caption={page.tableCaption} />
+    )
+  }
+
+  {
+    page.kind === "companies" && (
+      <CompanyTable companies={listedCompanies} caption="What each priced company states" />
+    )
+  }
+
+  {page.after && <p class="prose">{page.after}</p>}
+
+  {
+    page.kind === "prices" && page.city === "bryan" && (
+      <p class="prose">
+        <a href={href("/bounce-houses-college-station")}>Bounce house prices in College Station</a>
+      </p>
+    )
+  }
+  {
+    page.kind === "prices" && page.city === "college-station" && (
+      <p class="prose">
+        <a href={href("/bounce-houses-bryan")}>Bounce house prices in Bryan</a>
+        {" · "}
+        <a href={href("/water-slides")}>Water slides and wet inflatables</a>
+      </p>
+    )
+  }
+  {
+    page.kind === "prices" && !page.city && (
+      <p class="prose">
+        <a href={href("/bounce-houses-college-station")}>College Station bounce houses</a>
+        {" · "}
+        <a href={href("/bounce-houses-bryan")}>Bryan bounce houses</a>
+      </p>
+    )
+  }
+
+  {
+    page.kind === "companies" && (
+      <>
+        <h2>Checked, no public price list</h2>
+        <p class="prose">
+          These companies were checked on Nov 19, 2026. No item price was recorded. Nothing was estimated.
+        </p>
+        <CompanyTable companies={unlistedCompanies} caption="Companies with no recorded item price" />
+        <h2>Item pages with no price</h2>
+        <p class="prose">
+          These rows were on a company page, and that page did not show a usable price. The price cell
+          says Unverified.
+        </p>
+        <PriceTable rows={unverified} caption="Unverified item pages" />
+      </>
+    )
+  }
+
+  <p class="notice">
+    Prices come from each company's own public website, read on Nov 19, 2026. They may change. Call
+    to confirm the price, the date, and any delivery fee before you book.
+  </p>
+
+  <FaqList items={page.faqs} />
+
+  <p class="prose">
+    <a href={href("/whats-included")}>Delivery, setup, and fees</a>
+    {" · "}
+    <a href={href("/about")}>How prices are checked</a>
+  </p>
+</BaseLayout>
