@@ -15,12 +15,12 @@ const homeFaqs = [
   {
     question: "Where do the numbers come from?",
     answer:
-      "Each company's own public website, read on Nov 19, 2026. Third-party price lists were not used. Nothing was estimated.",
+      "Each company's own public website. Prices were checked Nov 19 to Nov 20, 2026. The day is on the row. Third-party price lists were not used. Nothing was estimated.",
   },
   {
     question: "What is still coming?",
     answer:
-      "Graduation party rentals, tents, tables and chairs, and a page for the cheapest backyard birthday bounce house. Those pages are not up yet. This site does not guess those prices.",
+      "Tent rental prices, a table and chair rental comparison, and a page for the cheapest backyard birthday bounce house. Those pages are not up yet. This site does not guess those prices. Graduation tent, table, and chair prices are on their own page.",
   },
 ];
 
@@ -52,7 +52,7 @@ const jsonLd = [
 
 <BaseLayout
   title="Party rental prices in College Station and Bryan"
-  description="Compare published bounce house, water slide, and party rental prices in College Station and Bryan, Texas. Checked Nov 19, 2026."
+  description="Compare published bounce house, water slide, and party rental prices in College Station and Bryan, Texas. Checked Nov 19 to Nov 20, 2026."
   jsonLd={jsonLd}
 >
   <section class="hero">
@@ -67,7 +67,8 @@ const jsonLd = [
     <aside class="notice">
       <p>
         <strong>{catalog.prices.length} published prices</strong> from {listedCompanies.length} companies,
-        read on Nov 19, 2026. A price can change after that day. Call the company before you book.
+        checked Nov 19 to Nov 20, 2026. Each row shows its own day. A price can change after the day
+        on that row. Call the company before you book.
       </p>
       <p class="small">
         This site is not a rental company. You book with the company, not here.
@@ -111,9 +112,10 @@ const jsonLd = [
   <h2>How prices get on this site</h2>
   <div class="prose stack">
     <p>
-      A price is listed only when that company's own page showed it on Nov 19, 2026. The row links
-      the page. If the page did not show a price, the row says Unverified and no number is filled in.
-      If size or rental window was blank, the cell says Not listed.
+      A price is listed only when that company's own page showed it on the checked day for that row.
+      Those days are Nov 19 and Nov 20, 2026. The row links the page. If the page did not show a
+      price, the row says Unverified and no number is filled in. If size or rental window was blank,
+      the cell says Not listed.
     </p>
     <p>
       <a href={href("/about")}>Read the full note on how this site checks prices.</a>

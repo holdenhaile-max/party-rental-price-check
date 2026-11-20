@@ -1,8 +1,16 @@
 # Party Rental Price Check notes
 
-Checked date: 2026-11-19. Prices come only from each company's own public website. Third-party aggregator prices were not used. No prices were estimated. When a page showed only a starting-at or "from" figure, that is what was recorded, with the wording preserved in the rental window or notes column.
+Checked dates: 2026-11-19 for the original collection. On 2026-11-20 these published prices were read again and were unchanged, so only `checked_date` was set to 2026-11-20:
 
-CSV path: `data/prices-2026-11-19.csv`
+- Mission Inflatables: Chairs ($2.50), TENT 10 x 10 ($225), 20x40 Tent ($650), 6' Tables ($14), 8' Table ($16)
+- Koozie's Premier Party Rentals: Canopy ($50)
+- Jump Around BCS: 6ft Tables ($12), Chairs ($2)
+- The Backyard Jump: Marble Rush Bounce House ($150)
+- Aggieland Bounce Houses & Beyond: The Bouncer XL ($165 for 1-4 hours, $215 for 5-16 hours)
+
+Other rows stay on 2026-11-19, including Bounce House Rentals BCS LLC tables and chairs. Prices come only from each company's own public website. Third-party aggregator prices were not used. No prices were estimated. When a page showed only a starting-at or "from" figure, that is what was recorded, with the wording preserved in the rental window or notes column.
+
+CSV path: `data/prices-2026-11-19.csv`. The filename stays the original snapshot name. It is not renamed when a later check updates a row date.
 
 The CSV has one row per published price window. Some companies list several durations for the same unit, so row counts can be higher than unique item counts.
 

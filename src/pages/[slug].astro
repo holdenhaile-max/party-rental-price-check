@@ -6,6 +6,7 @@ import PriceTable from "../components/PriceTable.astro";
 import { pages } from "../data/pages.mjs";
 import catalog from "../data/catalog.json";
 import { filterPrices, unverifiedPrices } from "../lib/filter.mjs";
+import { checkedSpan } from "../lib/format";
 import { absoluteUrl, href } from "../lib/paths";
 
 export function getStaticPaths() {
@@ -21,8 +22,14 @@ const rows =
     ? filterPrices(catalog.prices, catalog.companies, {
         categories: page.categories,
         city: page.city,
+        companies: page.companies,
       })
     : [];
+const noticeDates =
+  page.kind === "prices"
+    ? rows.map((row: { checkedDate: string }) => row.checkedDate)
+    : catalog.prices.map((row) => row.checkedDate);
+const noticeWhen = checkedSpan(noticeDates);
 const listedCompanies = catalog.companies.filter((company) => company.publicPrices === "listed");
 const unlistedCompanies = catalog.companies.filter((company) => company.publicPrices !== "listed");
 const unverified = unverifiedPrices(catalog.prices);
@@ -117,7 +124,7 @@ const jsonLd = [
   }
 
   <p class="notice">
-    Prices come from each company's own public website, read on Nov 19, 2026. They may change. Call
+    Prices come from each company's own public website, read on {noticeWhen}. They may change. Call
     to confirm the price, the date, and any delivery fee before you book.
   </p>
 

@@ -3,12 +3,12 @@
 /**
  * Add a page by appending an object here.
  * `kind: "prices"` needs `categories` and an optional `city` (`college-station` or `bryan`).
+ * Optional `companies` is a list of company names. When it is set, other companies are left off.
  * `kind: "companies"` renders the delivery and fees table.
  * Set `nav` to show the page in the header. Home cards use every entry in this list.
  */
 
 export const comingSoon = [
-  "Graduation party rental prices",
   "Tent rental prices",
   "Table and chair rental comparison",
   "Cheapest backyard birthday bounce house",
@@ -22,7 +22,7 @@ export const pages = [
     nav: "College Station",
     title: "Bounce house prices in College Station",
     description:
-      "Bounce house rental prices in College Station, TX from each company's own website. Size, rental window, delivery, and price. Checked Nov 19, 2026.",
+      "Bounce house rental prices in College Station, TX from each company's own website. Size, rental window, delivery, and price. Checked Nov 19 to Nov 20, 2026.",
     eyebrow: "College Station",
     h1: "Bounce house prices in College Station",
     lede:
@@ -63,7 +63,7 @@ export const pages = [
     nav: "Bryan",
     title: "Bounce house prices in Bryan",
     description:
-      "Bounce house rental prices for companies that serve Bryan, TX. Size, rental window, delivery, and price from each company's own site. Checked Nov 19, 2026.",
+      "Bounce house rental prices for companies that serve Bryan, TX. Size, rental window, delivery, and price from each company's own site. Checked Nov 19 to Nov 20, 2026.",
     eyebrow: "Bryan",
     h1: "Bounce house prices in Bryan",
     lede:
@@ -123,6 +123,59 @@ export const pages = [
         question: "Why does the same slide appear more than once?",
         answer:
           "Some companies publish a price for each length of time. Each length is its own row. Sort by price, then check the rental window.",
+      },
+    ],
+  },
+  {
+    slug: "graduation-party-rentals",
+    kind: "prices",
+    nav: "Graduation",
+    title: "Graduation party rental prices",
+    description:
+      "Tent, table, and chair rental prices for a graduation party in College Station and Bryan from Mission Inflatables, Koozie's Premier Party Rentals, and Jump Around BCS. Checked Nov 20, 2026.",
+    eyebrow: "Graduation",
+    h1: "Graduation party rental prices",
+    lede:
+      "Tents, tables, and chairs with a published price from Mission Inflatables, Koozie's Premier Party Rentals, and Jump Around BCS. Each row is one item and one rental window. This page does not add the rows into a party total.",
+    tableCaption: "Graduation party rental prices",
+    categories: ["tent", "table", "chair"],
+    companies: [
+      "Mission Inflatables",
+      "Koozie's Premier Party Rentals",
+      "Jump Around BCS",
+    ],
+    after:
+      "A graduation party total is not computed or estimated. No package price is invented. Mission Inflatables lists a 10x10 tent at $225 per day, a 20x40 tent at $650 per day, a 6' table at $14 per day, an 8' table at $16 per day, and a chair at $2.50 per day. Those Mission pages list the same amount from 1 hour through per day. Delivery fees for Mission are calculated at checkout and are separate from the item price. Tent anchoring and setup are not stated on the Mission pages in this table. Koozie's Premier Party Rentals lists a 10x10 canopy at $50. The rental window is not stated on that product page. The company site says delivery, setup, and takedown are included. Anchoring is not stated. Jump Around BCS lists a 6ft table at $12 and a chair at $2 for the standard 4 hour rental. Those prices exclude sales tax, and the FAQ states a $50 deposit. The listed price includes setup and delivery. Anchoring is not stated. Each row was checked on Nov 20, 2026 and links to the company page. Bounce House Rentals BCS LLC table and chair prices are not in this table.",
+    faqs: [
+      {
+        question: "Is a graduation party total listed?",
+        answer:
+          "No. A graduation party total is not computed or estimated. No package price is invented. The table lists separate tent, table, and chair prices.",
+      },
+      {
+        question: "What does Mission Inflatables list for a tent, table, or chair?",
+        answer:
+          "A 10x10 tent at $225 per day, a 20x40 tent at $650 per day, a 6' table at $14 per day, an 8' table at $16 per day, and a chair at $2.50 per day. Those pages list the same amount from 1 hour through per day. Delivery fees are calculated at checkout and are separate. Tent anchoring and setup are not stated.",
+      },
+      {
+        question: "What does Koozie's Premier Party Rentals list for a canopy?",
+        answer:
+          "A 10x10 canopy at $50. The rental window is not stated on that product page. The company site says delivery, setup, and takedown are included. Anchoring is not stated.",
+      },
+      {
+        question: "What does Jump Around BCS list for a table or chair?",
+        answer:
+          "A 6ft table at $12 and a chair at $2 for the standard 4 hour rental. Those prices exclude sales tax, and the FAQ states a $50 deposit. The listed price includes setup and delivery. Anchoring is not stated.",
+      },
+      {
+        question: "When were these prices checked?",
+        answer:
+          "Each row on this page was checked on Nov 20, 2026. The source link on the row is the company page.",
+      },
+      {
+        question: "Why are some table and chair prices missing from this page?",
+        answer:
+          "Bounce House Rentals BCS LLC publishes a table price and a chair price. Those rows are not on this page. A company with no public price is not given a guessed number.",
       },
     ],
   },

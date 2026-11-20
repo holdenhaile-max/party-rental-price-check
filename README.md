@@ -2,7 +2,7 @@
 
 Party rental prices, checked.
 
-A dated comparison of published party rental prices for College Station and Bryan, Texas. Every price comes from the company's own public page on Nov 19, 2026. The site does not estimate a missing number.
+A dated comparison of published party rental prices for College Station and Bryan, Texas. Every price comes from the company's own public page. Prices were checked Nov 19 to Nov 20, 2026. Each row keeps its own checked date. The site does not estimate a missing number.
 
 Live site: https://holdenhaile-max.github.io/party-rental-price-check/
 
@@ -12,10 +12,11 @@ Live site: https://holdenhaile-max.github.io/party-rental-price-check/
 - Bounce house prices in College Station
 - Bounce house prices in Bryan
 - Water slide and wet inflatable prices
+- Graduation party rental prices
 - What's included: delivery, setup, time window, and fees
 - About
 
-Coming soon, with no prices written yet: graduation party rentals, tents, tables and chairs, and the cheapest backyard birthday bounce house.
+Coming soon, with no prices written yet: tent rental prices, a table and chair rental comparison, and the cheapest backyard birthday bounce house.
 
 ## Develop
 
@@ -49,7 +50,7 @@ The site reads one file: `src/data/catalog.json`. The CSV snapshot lives at `dat
 ## Add a page
 
 1. Add an object to the `pages` array in `src/data/pages.mjs`.
-2. Set `kind` to `prices` and list `categories` (for example `["bounce house"]`). Set `city` to `college-station` or `bryan` when the page is for one city. Leave `city` off to include every company that has those categories.
+2. Set `kind` to `prices` and list `categories` (for example `["bounce house"]`). Set `city` to `college-station` or `bryan` when the page is for one city. Leave `city` off to include every company that has those categories. Set `companies` to a list of company names when the page should include only those companies.
 3. Write a plain `title`, `description`, `h1`, `lede`, and `faqs`. Set `nav` to a short label if it should appear in the header.
 4. The page is built from `src/pages/[slug].astro`. `PriceTable` renders the rows. You do not add a new table.
 5. Remove that topic from `comingSoon` in the same file once the page is real.
