@@ -8,6 +8,14 @@ Checked dates: 2026-11-19 for the original collection. On 2026-11-20 these publi
 - The Backyard Jump: Marble Rush Bounce House ($150)
 - Aggieland Bounce Houses & Beyond: The Bouncer XL ($165 for 1-4 hours, $215 for 5-16 hours)
 
+On 2026-11-21 these published prices were read again and were unchanged, so only `checked_date` was set to 2026-11-21:
+
+- The Backyard Jump, 16 rows: Emerald Bounce House ($175), Pink Castle ($175), Lucky Bounce House ($175), Princess Combo ($350), Mega Block Duel W/D Combo ($350), Dino Land Duel W/D Combo ($375), 15 FT Blue Crush ($300), 15 FT Purple Crush ($300), 15 FT Tropical Inferno ($300), 15ft Bot ($300), 15FT Megablock Slide ($300), 15ft Tidal Wave Dual Lane ($400), 18 FT Desert Oasis ($375), 18 FT Tropical Lava Rush ($375), Blue Lagoon ($500), Danger Zone ($500). Lucky Bounce House and 15 FT Purple Crush product URLs still returned 404. The bounce-house listing still showed from $175.00, and the all-inventory listing still showed from $300.00. Those listing prices were rechecked 2026-11-21.
+- Mission Inflatables: TENT 10 x 10 ($225) and 20x40 Tent ($650). Both pages show the same amount from 1 hour through per day.
+- Koozie's Premier Party Rentals: Canopy ($50). The page shows Rental $50.
+
+19 rows were reread. No prices changed.
+
 Other rows stay on 2026-11-19, including Bounce House Rentals BCS LLC tables and chairs. Prices come only from each company's own public website. Third-party aggregator prices were not used. No prices were estimated. When a page showed only a starting-at or "from" figure, that is what was recorded, with the wording preserved in the rental window or notes column.
 
 CSV path: `data/prices-2026-11-19.csv`. The filename stays the original snapshot name. It is not renamed when a later check updates a row date.
@@ -22,7 +30,7 @@ Booking platform: InflatableOffice (online cart, date/time, delivery-fee calcula
 
 Delivery / fees: service to College Station, Bryan, Brenham, Caldwell, Navasota, and surrounding areas. Delivery fees are calculated at checkout. Rain reschedule is free with 24-hour notice. Blower, cord, and stakes included.
 
-Lucky Bounce House appears on the bounce-house category page at $175 (15x15x14) but the individual product URL returned 404. That listing price is still in the CSV, with a note.
+Lucky Bounce House appears on the bounce-house category page at $175 (15x15x14) but the individual product URL returned 404. That listing price is still in the CSV, with a note. On 2026-11-21 the product URL still returned 404, and the bounce-house category page still showed from $175.00. 15 FT Purple Crush product URL also returned 404 on 2026-11-21. The all-inventory listing still showed from $300.00. Those listing prices were rechecked 2026-11-21.
 
 ## Aggieland Bounce Houses & Beyond (aggielandbouncers.com)
 

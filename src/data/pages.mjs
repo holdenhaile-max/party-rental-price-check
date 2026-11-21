@@ -9,7 +9,6 @@
  */
 
 export const comingSoon = [
-  "Tent rental prices",
   "Table and chair rental comparison",
   "Cheapest backyard birthday bounce house",
 ];
@@ -22,7 +21,7 @@ export const pages = [
     nav: "College Station",
     title: "Bounce house prices in College Station",
     description:
-      "Bounce house rental prices in College Station, TX from each company's own website. Size, rental window, delivery, and price. Checked Nov 19 to Nov 20, 2026.",
+      "Bounce house rental prices in College Station, TX from each company's own website. Size, rental window, delivery, and price. Checked Nov 19 to Nov 21, 2026.",
     eyebrow: "College Station",
     h1: "Bounce house prices in College Station",
     lede:
@@ -63,7 +62,7 @@ export const pages = [
     nav: "Bryan",
     title: "Bounce house prices in Bryan",
     description:
-      "Bounce house rental prices for companies that serve Bryan, TX. Size, rental window, delivery, and price from each company's own site. Checked Nov 19 to Nov 20, 2026.",
+      "Bounce house rental prices for companies that serve Bryan, TX. Size, rental window, delivery, and price from each company's own site. Checked Nov 19 to Nov 21, 2026.",
     eyebrow: "Bryan",
     h1: "Bounce house prices in Bryan",
     lede:
@@ -99,7 +98,7 @@ export const pages = [
     nav: "Water slides",
     title: "Water slide and wet inflatable prices",
     description:
-      "Water slide and wet inflatable rental prices for College Station and Bryan from each company's own website. Checked Nov 19, 2026.",
+      "Water slide and wet inflatable rental prices for College Station and Bryan from each company's own website. Checked Nov 19 to Nov 21, 2026.",
     eyebrow: "Water slides",
     h1: "Water slide and wet inflatable prices",
     lede:
@@ -132,7 +131,7 @@ export const pages = [
     nav: "Graduation",
     title: "Graduation party rental prices",
     description:
-      "Tent, table, and chair rental prices for a graduation party in College Station and Bryan from Mission Inflatables, Koozie's Premier Party Rentals, and Jump Around BCS. Checked Nov 20, 2026.",
+      "Tent, table, and chair rental prices for a graduation party in College Station and Bryan from Mission Inflatables, Koozie's Premier Party Rentals, and Jump Around BCS. Checked Nov 20 to Nov 21, 2026.",
     eyebrow: "Graduation",
     h1: "Graduation party rental prices",
     lede:
@@ -145,7 +144,7 @@ export const pages = [
       "Jump Around BCS",
     ],
     after:
-      "A graduation party total is not computed or estimated. No package price is invented. Mission Inflatables lists a 10x10 tent at $225 per day, a 20x40 tent at $650 per day, a 6' table at $14 per day, an 8' table at $16 per day, and a chair at $2.50 per day. Those Mission pages list the same amount from 1 hour through per day. Delivery fees for Mission are calculated at checkout and are separate from the item price. Tent anchoring and setup are not stated on the Mission pages in this table. Koozie's Premier Party Rentals lists a 10x10 canopy at $50. The rental window is not stated on that product page. The company site says delivery, setup, and takedown are included. Anchoring is not stated. Jump Around BCS lists a 6ft table at $12 and a chair at $2 for the standard 4 hour rental. Those prices exclude sales tax, and the FAQ states a $50 deposit. The listed price includes setup and delivery. Anchoring is not stated. Each row was checked on Nov 20, 2026 and links to the company page. Bounce House Rentals BCS LLC table and chair prices are not in this table.",
+      "A graduation party total is not computed or estimated. No package price is invented. Mission Inflatables lists a 10x10 tent at $225 per day, a 20x40 tent at $650 per day, a 6' table at $14 per day, an 8' table at $16 per day, and a chair at $2.50 per day. Those Mission pages list the same amount from 1 hour through per day. Delivery fees for Mission are calculated at checkout and are separate from the item price. Tent anchoring and setup are not stated on the Mission pages in this table. Koozie's Premier Party Rentals lists a 10x10 canopy at $50. The rental window is not stated on that product page. The company site says delivery, setup, and takedown are included. Anchoring is not stated. Jump Around BCS lists a 6ft table at $12 and a chair at $2 for the standard 4 hour rental. Those prices exclude sales tax, and the FAQ states a $50 deposit. The listed price includes setup and delivery. Anchoring is not stated. Tent and canopy rows were checked on Nov 21, 2026. Table and chair rows were checked on Nov 20, 2026. Each row links to the company page. Bounce House Rentals BCS LLC table and chair prices are not in this table.",
     faqs: [
       {
         question: "Is a graduation party total listed?",
@@ -170,12 +169,51 @@ export const pages = [
       {
         question: "When were these prices checked?",
         answer:
-          "Each row on this page was checked on Nov 20, 2026. The source link on the row is the company page.",
+          "Tent and canopy rows were checked on Nov 21, 2026. Table and chair rows were checked on Nov 20, 2026. The source link on the row is the company page.",
       },
       {
         question: "Why are some table and chair prices missing from this page?",
         answer:
           "Bounce House Rentals BCS LLC publishes a table price and a chair price. Those rows are not on this page. A company with no public price is not given a guessed number.",
+      },
+    ],
+  },
+  {
+    slug: "tent-rentals",
+    kind: "prices",
+    nav: "Tents",
+    title: "Tent rental prices",
+    description:
+      "Tent rental prices from Mission Inflatables and Koozie's Premier Party Rentals. Only two of the companies we checked publish tent prices. Checked Nov 21, 2026.",
+    eyebrow: "Tents",
+    h1: "Tent rental prices",
+    lede:
+      "Three published tent prices from two companies. Each row is one item. This page does not add the rows into a total.",
+    tableCaption: "Tent rental prices",
+    categories: ["tent"],
+    companies: ["Mission Inflatables", "Koozie's Premier Party Rentals"],
+    after:
+      "Only two of the companies we checked publish tent prices. Mission Inflatables lists a 10x10 tent at $225 and a 20x40 tent at $650. Those pages list the same amount from 1 hour through per day. The delivery fee is calculated at checkout. Tent anchoring and setup are not stated on those pages. Koozie's Premier Party Rentals lists a 10x10 canopy at $50. The rental window is not stated on that product page. The company site says delivery, setup, and takedown are included. Jump Around BCS mentions tent rentals on its site but shows no public tent price, so no number is given. No total is computed or estimated.",
+    faqs: [
+      {
+        question: "Why do only two companies appear?",
+        answer:
+          "Only two of the companies we checked publish tent prices. Mission Inflatables and Koozie's Premier Party Rentals list a dollar amount. Jump Around BCS mentions tent rentals on its site but shows no public tent price, so no number is given.",
+      },
+      {
+        question: "What is a canopy vs a tent?",
+        answer:
+          "Koozie's Premier Party Rentals lists a 10x10 canopy at $50. The row note describes it as a 10x10 Crown Shades pop-up canopy. Mission Inflatables lists a 10x10 tent at $225 and a 20x40 tent at $650. Those pages do not define how a canopy differs from a tent.",
+      },
+      {
+        question: "Are delivery and anchoring included?",
+        answer:
+          "Mission Inflatables calculates the delivery fee at checkout. Tent anchoring and setup are not stated on those pages. Koozie's Premier Party Rentals says delivery, setup, and takedown are included. Anchoring is not stated on the canopy page.",
+      },
+      {
+        question: "When were these prices checked?",
+        answer:
+          "Each row on this page was checked on Nov 21, 2026. The source link on the row is the company page. The prices were unchanged from the earlier check.",
       },
     ],
   },
