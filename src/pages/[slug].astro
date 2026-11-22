@@ -110,13 +110,15 @@ const jsonLd = [
       <>
         <h2>Checked, no public price list</h2>
         <p class="prose">
-          These companies were checked on Nov 19, 2026. No item price was recorded. Nothing was estimated.
+          These companies were checked. No item price was recorded. Nothing was estimated.
+          BCS Party Rentals was checked on Nov 22, 2026. The tables and chairs page would not load,
+          so no price was confirmed. The other companies in this table were checked on Nov 19, 2026.
         </p>
         <CompanyTable companies={unlistedCompanies} caption="Companies with no recorded item price" />
         <h2>Item pages with no price</h2>
         <p class="prose">
-          These rows were on a company page, and that page did not show a usable price. The price cell
-          says Unverified.
+          These rows do not have a usable price. The page was missing a price, or it would not load.
+          The price cell says Unverified.
         </p>
         <PriceTable rows={unverified} caption="Unverified item pages" />
       </>

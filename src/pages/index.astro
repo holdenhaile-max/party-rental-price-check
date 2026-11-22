@@ -15,12 +15,12 @@ const homeFaqs = [
   {
     question: "Where do the numbers come from?",
     answer:
-      "Each company's own public website. Prices were checked Nov 19 to Nov 21, 2026. The day is on the row. Third-party price lists were not used. Nothing was estimated.",
+      "Each company's own public website. Prices were checked Nov 19 to Nov 22, 2026. The day is on the row. Third-party price lists were not used. Nothing was estimated.",
   },
   {
     question: "What is still coming?",
     answer:
-      "A table and chair rental comparison, and a page for the cheapest backyard birthday bounce house. Those pages are not up yet. This site does not guess those prices. Tent prices are on their own page. Graduation tent, table, and chair prices are on their own page.",
+      "A page for the cheapest backyard birthday bounce house. That page is not up yet. This site does not guess that price. Table and chair prices are on their own page. Tent prices are on their own page. Graduation tent, table, and chair prices are on their own page.",
   },
 ];
 
@@ -52,7 +52,7 @@ const jsonLd = [
 
 <BaseLayout
   title="Party rental prices in College Station and Bryan"
-  description="Compare published bounce house, water slide, and party rental prices in College Station and Bryan, Texas. Checked Nov 19 to Nov 21, 2026."
+  description="Compare published bounce house, water slide, table, chair, and party rental prices in College Station and Bryan, Texas. Checked Nov 19 to Nov 22, 2026."
   jsonLd={jsonLd}
 >
   <section class="hero">
@@ -67,7 +67,7 @@ const jsonLd = [
     <aside class="notice">
       <p>
         <strong>{catalog.prices.length} published prices</strong> from {listedCompanies.length} companies,
-        checked Nov 19 to Nov 21, 2026. Each row shows its own day. A price can change after the day
+        checked Nov 19 to Nov 22, 2026. Each row shows its own day. A price can change after the day
         on that row. Call the company before you book.
       </p>
       <p class="small">
@@ -113,7 +113,7 @@ const jsonLd = [
   <div class="prose stack">
     <p>
       A price is listed only when that company's own page showed it on the checked day for that row.
-      Those days are Nov 19, Nov 20, and Nov 21, 2026. The row links the page. If the page did not show a
+      Those days are Nov 19, Nov 20, Nov 21, and Nov 22, 2026. The row links the page. If the page did not show a
       price, the row says Unverified and no number is filled in. If size or rental window was blank,
       the cell says Not listed.
     </p>

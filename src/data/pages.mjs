@@ -9,7 +9,6 @@
  */
 
 export const comingSoon = [
-  "Table and chair rental comparison",
   "Cheapest backyard birthday bounce house",
 ];
 
@@ -21,7 +20,7 @@ export const pages = [
     nav: "College Station",
     title: "Bounce house prices in College Station",
     description:
-      "Bounce house rental prices in College Station, TX from each company's own website. Size, rental window, delivery, and price. Checked Nov 19 to Nov 21, 2026.",
+      "Bounce house rental prices in College Station, TX from each company's own website. Size, rental window, delivery, and price. Checked Nov 19 to Nov 22, 2026.",
     eyebrow: "College Station",
     h1: "Bounce house prices in College Station",
     lede:
@@ -62,7 +61,7 @@ export const pages = [
     nav: "Bryan",
     title: "Bounce house prices in Bryan",
     description:
-      "Bounce house rental prices for companies that serve Bryan, TX. Size, rental window, delivery, and price from each company's own site. Checked Nov 19 to Nov 21, 2026.",
+      "Bounce house rental prices for companies that serve Bryan, TX. Size, rental window, delivery, and price from each company's own site. Checked Nov 19 to Nov 22, 2026.",
     eyebrow: "Bryan",
     h1: "Bounce house prices in Bryan",
     lede:
@@ -131,7 +130,7 @@ export const pages = [
     nav: "Graduation",
     title: "Graduation party rental prices",
     description:
-      "Tent, table, and chair rental prices for a graduation party in College Station and Bryan from Mission Inflatables, Koozie's Premier Party Rentals, and Jump Around BCS. Checked Nov 20 to Nov 21, 2026.",
+      "Tent, table, and chair rental prices for a graduation party in College Station and Bryan from Mission Inflatables, Koozie's Premier Party Rentals, and Jump Around BCS. Checked Nov 21 to Nov 22, 2026.",
     eyebrow: "Graduation",
     h1: "Graduation party rental prices",
     lede:
@@ -144,7 +143,7 @@ export const pages = [
       "Jump Around BCS",
     ],
     after:
-      "A graduation party total is not computed or estimated. No package price is invented. Mission Inflatables lists a 10x10 tent at $225 per day, a 20x40 tent at $650 per day, a 6' table at $14 per day, an 8' table at $16 per day, and a chair at $2.50 per day. Those Mission pages list the same amount from 1 hour through per day. Delivery fees for Mission are calculated at checkout and are separate from the item price. Tent anchoring and setup are not stated on the Mission pages in this table. Koozie's Premier Party Rentals lists a 10x10 canopy at $50. The rental window is not stated on that product page. The company site says delivery, setup, and takedown are included. Anchoring is not stated. Jump Around BCS lists a 6ft table at $12 and a chair at $2 for the standard 4 hour rental. Those prices exclude sales tax, and the FAQ states a $50 deposit. The listed price includes setup and delivery. Anchoring is not stated. Tent and canopy rows were checked on Nov 21, 2026. Table and chair rows were checked on Nov 20, 2026. Each row links to the company page. Bounce House Rentals BCS LLC table and chair prices are not in this table.",
+      "A graduation party total is not computed or estimated. No package price is invented. Mission Inflatables lists a 10x10 tent at $225 per day, a 20x40 tent at $650 per day, a 6' table at $14 per day, an 8' table at $16 per day, and a chair at $2.50 per day. Those Mission pages list the same amount from 1 hour through per day. Delivery fees for Mission are calculated at checkout and are separate from the item price. Tent anchoring and setup are not stated on the Mission pages in this table. Koozie's Premier Party Rentals lists a 10x10 canopy at $50. The rental window is not stated on that product page. The company site says delivery, setup, and takedown are included. Anchoring is not stated. Jump Around BCS lists a 6ft table at $12 and a chair at $2 for the standard 4 hour rental. Those prices exclude sales tax, and the FAQ states a $50 deposit. The listed price includes setup and delivery. Anchoring is not stated. Tent and canopy rows were checked on Nov 21, 2026. Table and chair rows were checked on Nov 22, 2026. Each row links to the company page. Bounce House Rentals BCS LLC table and chair prices are not in this table.",
     faqs: [
       {
         question: "Is a graduation party total listed?",
@@ -169,12 +168,14 @@ export const pages = [
       {
         question: "When were these prices checked?",
         answer:
-          "Tent and canopy rows were checked on Nov 21, 2026. Table and chair rows were checked on Nov 20, 2026. The source link on the row is the company page.",
+          "Tent and canopy rows were checked on Nov 21, 2026. Table and chair rows were checked on Nov 22, 2026. The source link on the row is the company page.",
       },
       {
         question: "Why are some table and chair prices missing from this page?",
         answer:
-          "Bounce House Rentals BCS LLC publishes a table price and a chair price. Those rows are not on this page. A company with no public price is not given a guessed number.",
+          "Bounce House Rentals BCS LLC publishes a table price and a chair price. Those rows are not on this page. A company with no public price is not given a guessed number. The table and chair comparison lists the other table and chair rows.",
+        href: "/table-and-chair-rental-comparison",
+        linkLabel: "Table and chair rental comparison",
       },
     ],
   },
@@ -218,12 +219,55 @@ export const pages = [
     ],
   },
   {
+    slug: "table-and-chair-rental-comparison",
+    kind: "prices",
+    nav: "Tables and chairs",
+    title: "Table and chair rental comparison",
+    description:
+      "Table and chair rental prices in College Station and Bryan from each company's own website. Checked Nov 22, 2026.",
+    eyebrow: "Tables and chairs",
+    h1: "Table and chair rental comparison",
+    lede:
+      "Published table and chair prices for a party. Each row is one item from the company's own page. This page does not add the rows into a total.",
+    tableCaption: "Table and chair rental prices",
+    categories: ["table", "chair"],
+    after:
+      "Koozie's Premier Party Rentals lists no tables or chairs on its site. It lists a 10x10 canopy at $50, and that row stays on the tent page. The Backyard Jump and Freedom Fun USA do not list table or chair prices. Another inflatable company that was checked lists bounce houses only. Mission Inflatables also lists a 10x10 tent at $225 and a 20x40 tent at $650. Those stay on the tent page. Mission lists the same table and chair amount from 1 hour through per day. Delivery is calculated at checkout and is separate. Jump Around BCS uses a 4 hour standard rental. Those prices exclude sales tax, and the FAQ states a $50 deposit. The listed price includes setup and delivery. Bounce House Rentals BCS LLC does not state a rental window on the table or chair pages. For College Station Tent and Event Rentals, the rental window is not stated on the product page. The homepage says professional delivery, setup, and teardown are included. A delivery fee, tax, and deposit are not stated. BCS Party Rentals is unverified. The tables and chairs page would not load on Nov 22, 2026, so no price is filled in. A party total is not computed or estimated.",
+    faqs: [
+      {
+        question: "Do prices include delivery and setup?",
+        answer:
+          "It depends on the company. Jump Around BCS says the listed price includes setup and delivery. Mission Inflatables calculates delivery at checkout, separate from the item price. College Station Tent and Event Rentals says professional delivery, setup, and teardown are included. A delivery fee was not stated on those pages. Bounce House Rentals BCS LLC says they deliver and set up. A delivery fee was not stated on the item pages. Read the delivery column before you compare two prices.",
+      },
+      {
+        question: "What is the rental window?",
+        answer:
+          "Mission Inflatables lists the same price from 1 hour through per day. Jump Around BCS uses a 4 hour standard rental. College Station Tent and Event Rentals does not state a rental window on the product page. Bounce House Rentals BCS LLC does not state one on the table or chair pages. The window is on each row.",
+      },
+      {
+        question: "Is tax included?",
+        answer:
+          "Jump Around BCS states that prices do not include sales tax. On the other product pages in this table, sales tax was not stated. That is not the same as tax-free.",
+      },
+      {
+        question: "Why are some rows unverified?",
+        answer:
+          "BCS Party Rentals has two rows with no price. The tables and chairs page would not load on Nov 22, 2026, so the price was not confirmed. Those rows say Unverified and the price is blank.",
+      },
+      {
+        question: "Where does each price come from?",
+        answer:
+          "Each price comes from that company's own public page. The source link is on the row. These rows were checked on Nov 22, 2026. Nothing on this page was estimated.",
+      },
+    ],
+  },
+  {
     slug: "whats-included",
     kind: "companies",
     nav: "What's included",
     title: "What's included: delivery, setup, and fees",
     description:
-      "Delivery, setup, rental time, and fees by party rental company in College Station and Bryan. Taken from each company's own site on Nov 19, 2026.",
+      "Delivery, setup, rental time, and fees by party rental company in College Station and Bryan. Taken from each company's own site. Checked Nov 19 to Nov 22, 2026.",
     eyebrow: "Delivery and fees",
     h1: "What's included: delivery, setup, time window, and fees",
     lede:

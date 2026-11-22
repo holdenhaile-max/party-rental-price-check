@@ -1,6 +1,6 @@
 {
   "checkedDate": "2026-11-19",
-  "checkedLabel": "Checked Nov 19 to Nov 21, 2026",
+  "checkedLabel": "Checked Nov 19 to Nov 22, 2026",
   "companies": [
     {
       "id": "the-backyard-jump",
@@ -182,6 +182,38 @@
       "setup": "Not listed.",
       "timeWindow": "Not listed.",
       "fees": "Not listed. Requests failed with HTTP 500 or an SSL error.",
+      "publicPrices": "unavailable"
+    },
+    {
+      "id": "college-station-tent-and-event-rentals",
+      "name": "College Station Tent and Event Rentals",
+      "website": "https://www.cstattent.com/",
+      "booking": "Not listed.",
+      "serves": [
+        "college-station",
+        "bryan"
+      ],
+      "serviceArea": "The site says it serves the greater Central Texas area. The address on the site is in Bryan, TX.",
+      "delivery": "The homepage says professional delivery, setup, and teardown are included. A delivery fee is not stated.",
+      "setup": "The homepage says professional delivery, setup, and teardown are included.",
+      "timeWindow": "Not stated on the product pages read.",
+      "fees": "Not listed. A delivery fee, sales tax, and a deposit are not stated on the pages read.",
+      "publicPrices": "listed"
+    },
+    {
+      "id": "bcs-party-rentals",
+      "name": "BCS Party Rentals",
+      "website": "https://www.bcspartyrental.com/",
+      "booking": "Not listed.",
+      "serves": [
+        "college-station",
+        "bryan"
+      ],
+      "serviceArea": "Bryan and College Station.",
+      "delivery": "Not listed.",
+      "setup": "Not listed.",
+      "timeWindow": "Not listed.",
+      "fees": "Not listed. The tables and chairs page would not load on Nov 22, 2026, so no price was confirmed.",
       "publicPrices": "unavailable"
     }
   ],
@@ -462,7 +494,7 @@
       "feeNotes": "Free delivery in Bryan/College Station. Delivery fee charged for areas greater than 15 miles outside of BCS. Unit delivered cleaned and sanitized. Extension cord, blower, stakes, and tarp included.",
       "serviceArea": "both",
       "sourceUrl": "https://aggielandbouncers.com/rentals/bounce-houses/the-drop-top/",
-      "checkedDate": "2026-11-19",
+      "checkedDate": "2026-11-22",
       "status": "priced",
       "notes": ""
     },
@@ -476,7 +508,7 @@
       "feeNotes": "Free delivery in Bryan/College Station. Delivery fee charged for areas greater than 15 miles outside of BCS. Unit delivered cleaned and sanitized. Extension cord, blower, stakes, and tarp included.",
       "serviceArea": "both",
       "sourceUrl": "https://aggielandbouncers.com/rentals/bounce-houses/the-drop-top/",
-      "checkedDate": "2026-11-19",
+      "checkedDate": "2026-11-22",
       "status": "priced",
       "notes": ""
     },
@@ -490,7 +522,7 @@
       "feeNotes": "Free delivery in Bryan/College Station. Delivery fee charged for areas greater than 15 miles outside of BCS. Unit delivered cleaned and sanitized. Extension cord, blower, stakes, and tarp included.",
       "serviceArea": "both",
       "sourceUrl": "https://aggielandbouncers.com/rentals/bounce-houses/the-drop-top/",
-      "checkedDate": "2026-11-19",
+      "checkedDate": "2026-11-22",
       "status": "priced",
       "notes": "Product page lists a higher per-day rate than the 5-8 hour rate. Additional hour $50; 2 days $375."
     },
@@ -630,7 +662,7 @@
       "feeNotes": "Professional delivery to College Station and surrounding areas; delivery fees calculated at checkout. FAQ: standard rental is usually for the day; overnight or multi-day available for an additional charge if the equipment is in a secure location. Rain reschedule free with 24-hour notice. Serves the greater Brazos Valley, including Franklin, Iola, Bryan, College Station, Navasota, Caldwell, Brenham, Hearne, Huntsville, and surrounding areas.",
       "serviceArea": "both",
       "sourceUrl": "https://missioninflatablesllc.com/rentals/moonwalks-bounce-houses/castle-bounce-house/",
-      "checkedDate": "2026-11-19",
+      "checkedDate": "2026-11-22",
       "status": "priced",
       "notes": ""
     },
@@ -644,7 +676,7 @@
       "feeNotes": "Professional delivery to College Station and surrounding areas; delivery fees calculated at checkout. FAQ: standard rental is usually for the day; overnight or multi-day available for an additional charge if the equipment is in a secure location. Rain reschedule free with 24-hour notice. Serves the greater Brazos Valley, including Franklin, Iola, Bryan, College Station, Navasota, Caldwell, Brenham, Hearne, Huntsville, and surrounding areas.",
       "serviceArea": "both",
       "sourceUrl": "https://missioninflatablesllc.com/rentals/moonwalks-bounce-houses/mickey-park-jump-large/",
-      "checkedDate": "2026-11-19",
+      "checkedDate": "2026-11-22",
       "status": "priced",
       "notes": ""
     },
@@ -658,7 +690,7 @@
       "feeNotes": "Professional delivery to College Station and surrounding areas; delivery fees calculated at checkout. FAQ: standard rental is usually for the day; overnight or multi-day available for an additional charge if the equipment is in a secure location. Rain reschedule free with 24-hour notice. Serves the greater Brazos Valley, including Franklin, Iola, Bryan, College Station, Navasota, Caldwell, Brenham, Hearne, Huntsville, and surrounding areas.",
       "serviceArea": "both",
       "sourceUrl": "https://missioninflatablesllc.com/rentals/moonwalks-bounce-houses/palm-tree-bounce/",
-      "checkedDate": "2026-11-19",
+      "checkedDate": "2026-11-22",
       "status": "priced",
       "notes": ""
     },
@@ -672,7 +704,7 @@
       "feeNotes": "Professional delivery to College Station and surrounding areas; delivery fees calculated at checkout. FAQ: standard rental is usually for the day; overnight or multi-day available for an additional charge if the equipment is in a secure location. Rain reschedule free with 24-hour notice. Serves the greater Brazos Valley, including Franklin, Iola, Bryan, College Station, Navasota, Caldwell, Brenham, Hearne, Huntsville, and surrounding areas.",
       "serviceArea": "both",
       "sourceUrl": "https://missioninflatablesllc.com/rentals/moonwalks-bounce-houses/pretty-princess/",
-      "checkedDate": "2026-11-19",
+      "checkedDate": "2026-11-22",
       "status": "priced",
       "notes": ""
     },
@@ -686,7 +718,7 @@
       "feeNotes": "Professional delivery to College Station and surrounding areas; delivery fees calculated at checkout. FAQ: standard rental is usually for the day; overnight or multi-day available for an additional charge if the equipment is in a secure location. Rain reschedule free with 24-hour notice. Serves the greater Brazos Valley, including Franklin, Iola, Bryan, College Station, Navasota, Caldwell, Brenham, Hearne, Huntsville, and surrounding areas.",
       "serviceArea": "both",
       "sourceUrl": "https://missioninflatablesllc.com/rentals/moonwalks-bounce-houses/super-castle/",
-      "checkedDate": "2026-11-19",
+      "checkedDate": "2026-11-22",
       "status": "priced",
       "notes": ""
     },
@@ -994,7 +1026,7 @@
       "feeNotes": "Professional delivery to College Station and surrounding areas; delivery fees calculated at checkout. FAQ: standard rental is usually for the day; overnight or multi-day available for an additional charge if the equipment is in a secure location. Rain reschedule free with 24-hour notice. Serves the greater Brazos Valley, including Franklin, Iola, Bryan, College Station, Navasota, Caldwell, Brenham, Hearne, Huntsville, and surrounding areas.",
       "serviceArea": "both",
       "sourceUrl": "https://missioninflatablesllc.com/rentals/tables-and-chairs/6-tables/",
-      "checkedDate": "2026-11-20",
+      "checkedDate": "2026-11-22",
       "status": "priced",
       "notes": ""
     },
@@ -1008,7 +1040,7 @@
       "feeNotes": "Professional delivery to College Station and surrounding areas; delivery fees calculated at checkout. FAQ: standard rental is usually for the day; overnight or multi-day available for an additional charge if the equipment is in a secure location. Rain reschedule free with 24-hour notice. Serves the greater Brazos Valley, including Franklin, Iola, Bryan, College Station, Navasota, Caldwell, Brenham, Hearne, Huntsville, and surrounding areas.",
       "serviceArea": "both",
       "sourceUrl": "https://missioninflatablesllc.com/rentals/tables-and-chairs/8-table/",
-      "checkedDate": "2026-11-20",
+      "checkedDate": "2026-11-22",
       "status": "priced",
       "notes": ""
     },
@@ -1022,7 +1054,7 @@
       "feeNotes": "Professional delivery to College Station and surrounding areas; delivery fees calculated at checkout. FAQ: standard rental is usually for the day; overnight or multi-day available for an additional charge if the equipment is in a secure location. Rain reschedule free with 24-hour notice. Serves the greater Brazos Valley, including Franklin, Iola, Bryan, College Station, Navasota, Caldwell, Brenham, Hearne, Huntsville, and surrounding areas.",
       "serviceArea": "both",
       "sourceUrl": "https://missioninflatablesllc.com/rentals/tables-and-chairs/chairs/",
-      "checkedDate": "2026-11-20",
+      "checkedDate": "2026-11-22",
       "status": "priced",
       "notes": ""
     },
@@ -1400,7 +1432,7 @@
       "feeNotes": "Professional delivery to College Station and surrounding areas; delivery fees calculated at checkout. FAQ: standard rental is usually for the day; overnight or multi-day available for an additional charge if the equipment is in a secure location. Rain reschedule free with 24-hour notice.",
       "serviceArea": "both",
       "sourceUrl": "https://missioninflatablesllc.com/rentals/party-extras/high-density-fog/",
-      "checkedDate": "2026-11-19",
+      "checkedDate": "2026-11-22",
       "status": "unverified",
       "notes": "Product page exists but all duration prices display as $0.00. Not recorded as a priced rental."
     },
@@ -1414,7 +1446,7 @@
       "feeNotes": "Company site says delivery, setup, and takedown are included, with no mileage fees to Waco, College Station, Bremond, Franklin, and the surrounding area. Homepage also lists Bryan. Rates may change seasonally. Military, first responder, and educator discounts mentioned. Sales tax not stated on item pages.",
       "serviceArea": "both",
       "sourceUrl": "https://kooziepartyrentals.com/product/happy-birthday-bounce-house/",
-      "checkedDate": "2026-11-19",
+      "checkedDate": "2026-11-22",
       "status": "priced",
       "notes": "Product page: Rental $135 Wet/Dry."
     },
@@ -1428,7 +1460,7 @@
       "feeNotes": "Company site says delivery, setup, and takedown are included, with no mileage fees to Waco, College Station, Bremond, Franklin, and the surrounding area. Homepage also lists Bryan. Rates may change seasonally. Military, first responder, and educator discounts mentioned. Sales tax not stated on item pages.",
       "serviceArea": "both",
       "sourceUrl": "https://kooziepartyrentals.com/product/lego-master-bounce-house-with-basketball-hoop/",
-      "checkedDate": "2026-11-19",
+      "checkedDate": "2026-11-22",
       "status": "priced",
       "notes": ""
     },
@@ -1442,7 +1474,7 @@
       "feeNotes": "Company site says delivery, setup, and takedown are included, with no mileage fees to Waco, College Station, Bremond, Franklin, and the surrounding area. Homepage also lists Bryan. Rates may change seasonally. Military, first responder, and educator discounts mentioned. Sales tax not stated on item pages.",
       "serviceArea": "both",
       "sourceUrl": "https://kooziepartyrentals.com/product/king-bounce-house-combo/",
-      "checkedDate": "2026-11-19",
+      "checkedDate": "2026-11-22",
       "status": "priced",
       "notes": "Product page wording: 'Rental $275 flat rate Dry / 250 Wet'. Dry figure used on this row."
     },
@@ -1456,7 +1488,7 @@
       "feeNotes": "Company site says delivery, setup, and takedown are included, with no mileage fees to Waco, College Station, Bremond, Franklin, and the surrounding area. Homepage also lists Bryan. Rates may change seasonally. Military, first responder, and educator discounts mentioned. Sales tax not stated on item pages.",
       "serviceArea": "both",
       "sourceUrl": "https://kooziepartyrentals.com/product/king-bounce-house-combo/",
-      "checkedDate": "2026-11-19",
+      "checkedDate": "2026-11-22",
       "status": "priced",
       "notes": "Product page wording: 'Rental $275 flat rate Dry / 250 Wet'. Wet figure used on this row as printed."
     },
@@ -1792,7 +1824,7 @@
       "feeNotes": "Price includes setup and delivery; additional fees may apply farther out. Prices do not include sales tax. $50 credit card deposit required; fully refundable if canceled at least 8 days prior. Setup time is in addition to the rental window (crew arrives early so the full rental time is play time). Delivers to College Station, Bryan, Navasota, Caldwell, Iola, Bedias, Hearne, Rockdale, and beyond.",
       "serviceArea": "both",
       "sourceUrl": "https://www.collegestationbouncehouserentals.com/items/lava-bounce-house/",
-      "checkedDate": "2026-11-19",
+      "checkedDate": "2026-11-22",
       "status": "priced",
       "notes": ""
     },
@@ -1806,7 +1838,7 @@
       "feeNotes": "Price includes setup and delivery; additional fees may apply farther out. Prices do not include sales tax. $50 credit card deposit required; fully refundable if canceled at least 8 days prior. Setup time is in addition to the rental window (crew arrives early so the full rental time is play time). Delivers to College Station, Bryan, Navasota, Caldwell, Iola, Bedias, Hearne, Rockdale, and beyond.",
       "serviceArea": "both",
       "sourceUrl": "https://www.collegestationbouncehouserentals.com/items/princess-castle-2/",
-      "checkedDate": "2026-11-19",
+      "checkedDate": "2026-11-22",
       "status": "priced",
       "notes": ""
     },
@@ -1820,7 +1852,7 @@
       "feeNotes": "Price includes setup and delivery; additional fees may apply farther out. Prices do not include sales tax. $50 credit card deposit required; fully refundable if canceled at least 8 days prior. Setup time is in addition to the rental window (crew arrives early so the full rental time is play time). Delivers to College Station, Bryan, Navasota, Caldwell, Iola, Bedias, Hearne, Rockdale, and beyond.",
       "serviceArea": "both",
       "sourceUrl": "https://www.collegestationbouncehouserentals.com/items/princess-castle-3/",
-      "checkedDate": "2026-11-19",
+      "checkedDate": "2026-11-22",
       "status": "priced",
       "notes": ""
     },
@@ -1834,7 +1866,7 @@
       "feeNotes": "Price includes setup and delivery; additional fees may apply farther out. Prices do not include sales tax. $50 credit card deposit required; fully refundable if canceled at least 8 days prior. Setup time is in addition to the rental window (crew arrives early so the full rental time is play time). Delivers to College Station, Bryan, Navasota, Caldwell, Iola, Bedias, Hearne, Rockdale, and beyond.",
       "serviceArea": "both",
       "sourceUrl": "https://www.collegestationbouncehouserentals.com/items/all-american-bounce-house/",
-      "checkedDate": "2026-11-19",
+      "checkedDate": "2026-11-22",
       "status": "priced",
       "notes": ""
     },
@@ -2184,7 +2216,7 @@
       "feeNotes": "Price includes setup and delivery; additional fees may apply farther out. Prices do not include sales tax. $50 credit card deposit required; fully refundable if canceled at least 8 days prior. Setup time is in addition to the rental window (crew arrives early so the full rental time is play time). Delivers to College Station, Bryan, Navasota, Caldwell, Iola, Bedias, Hearne, Rockdale, and beyond.",
       "serviceArea": "both",
       "sourceUrl": "https://www.collegestationbouncehouserentals.com/items/6ft-tables/",
-      "checkedDate": "2026-11-20",
+      "checkedDate": "2026-11-22",
       "status": "priced",
       "notes": ""
     },
@@ -2198,7 +2230,7 @@
       "feeNotes": "Price includes setup and delivery; additional fees may apply farther out. Prices do not include sales tax. $50 credit card deposit required; fully refundable if canceled at least 8 days prior. Setup time is in addition to the rental window (crew arrives early so the full rental time is play time). Delivers to College Station, Bryan, Navasota, Caldwell, Iola, Bedias, Hearne, Rockdale, and beyond.",
       "serviceArea": "both",
       "sourceUrl": "https://www.collegestationbouncehouserentals.com/items/chairs/",
-      "checkedDate": "2026-11-20",
+      "checkedDate": "2026-11-22",
       "status": "priced",
       "notes": ""
     },
@@ -2268,7 +2300,7 @@
       "feeNotes": "Price includes setup and delivery; additional fees may apply farther out. Prices do not include sales tax. $50 credit card deposit required; fully refundable if canceled at least 8 days prior. Setup time is in addition to the rental window (crew arrives early so the full rental time is play time).",
       "serviceArea": "both",
       "sourceUrl": "https://www.collegestationbouncehouserentals.com/items/toddler-play-zone-dry/",
-      "checkedDate": "2026-11-19",
+      "checkedDate": "2026-11-22",
       "status": "unverified",
       "notes": "Category page did not list a price. Item page loaded but showed $0.00 and no item header, so no public price was captured."
     },
@@ -2282,7 +2314,7 @@
       "feeNotes": "Site says they deliver, set up, and walk through equipment use. FAQ page on 2026-11-19 had no rental-window, deposit, or tax details. Sales tax and delivery fees were not stated on item pages. Site describes service to College Station, TX and surrounding areas. Bryan is not explicitly named on the pages reviewed.",
       "serviceArea": "both",
       "sourceUrl": "https://bcsbounce.com/items/all_american_bounce_house/",
-      "checkedDate": "2026-11-19",
+      "checkedDate": "2026-11-22",
       "status": "priced",
       "notes": ""
     },
@@ -2296,7 +2328,7 @@
       "feeNotes": "Site says they deliver, set up, and walk through equipment use. FAQ page on 2026-11-19 had no rental-window, deposit, or tax details. Sales tax and delivery fees were not stated on item pages. Site describes service to College Station, TX and surrounding areas. Bryan is not explicitly named on the pages reviewed.",
       "serviceArea": "both",
       "sourceUrl": "https://bcsbounce.com/items/bounce_house_2/",
-      "checkedDate": "2026-11-19",
+      "checkedDate": "2026-11-22",
       "status": "priced",
       "notes": ""
     },
@@ -2310,7 +2342,7 @@
       "feeNotes": "Site says they deliver, set up, and walk through equipment use. FAQ page on 2026-11-19 had no rental-window, deposit, or tax details. Sales tax and delivery fees were not stated on item pages. Site describes service to College Station, TX and surrounding areas. Bryan is not explicitly named on the pages reviewed.",
       "serviceArea": "both",
       "sourceUrl": "https://bcsbounce.com/items/lava_bounce_house/",
-      "checkedDate": "2026-11-19",
+      "checkedDate": "2026-11-22",
       "status": "priced",
       "notes": ""
     },
@@ -2324,7 +2356,7 @@
       "feeNotes": "Site says they deliver, set up, and walk through equipment use. FAQ page on 2026-11-19 had no rental-window, deposit, or tax details. Sales tax and delivery fees were not stated on item pages. Site describes service to College Station, TX and surrounding areas. Bryan is not explicitly named on the pages reviewed.",
       "serviceArea": "both",
       "sourceUrl": "https://bcsbounce.com/items/princess_castle_2/",
-      "checkedDate": "2026-11-19",
+      "checkedDate": "2026-11-22",
       "status": "priced",
       "notes": ""
     },
@@ -2604,7 +2636,7 @@
       "feeNotes": "Site says they deliver, set up, and walk through equipment use. FAQ page on 2026-11-19 had no rental-window, deposit, or tax details. Sales tax and delivery fees were not stated on item pages. Site describes service to College Station, TX and surrounding areas. Bryan is not explicitly named on the pages reviewed.",
       "serviceArea": "both",
       "sourceUrl": "https://bcsbounce.com/items/6ft_tables/",
-      "checkedDate": "2026-11-19",
+      "checkedDate": "2026-11-22",
       "status": "priced",
       "notes": ""
     },
@@ -2618,7 +2650,7 @@
       "feeNotes": "Site says they deliver, set up, and walk through equipment use. FAQ page on 2026-11-19 had no rental-window, deposit, or tax details. Sales tax and delivery fees were not stated on item pages. Site describes service to College Station, TX and surrounding areas. Bryan is not explicitly named on the pages reviewed.",
       "serviceArea": "both",
       "sourceUrl": "https://bcsbounce.com/items/chairs/",
-      "checkedDate": "2026-11-19",
+      "checkedDate": "2026-11-22",
       "status": "priced",
       "notes": ""
     },
@@ -4301,6 +4333,118 @@
       "checkedDate": "2026-11-19",
       "status": "priced",
       "notes": ""
+    },
+    {
+      "company": "College Station Tent and Event Rentals",
+      "item": "White Metal Folding Chair",
+      "category": "chair",
+      "size": "",
+      "price": 2.25,
+      "rentalWindow": "not stated on the product page",
+      "feeNotes": "Homepage says professional delivery, setup, and teardown are included. Delivery fee, sales tax, and deposit are not stated on the pages read. The site says it serves the greater Central Texas area. The address on the site is in Bryan, TX.",
+      "serviceArea": "both",
+      "sourceUrl": "https://www.cstattent.com/rental-store",
+      "checkedDate": "2026-11-22",
+      "status": "priced",
+      "notes": ""
+    },
+    {
+      "company": "College Station Tent and Event Rentals",
+      "item": "White Resin Folding Chair",
+      "category": "chair",
+      "size": "",
+      "price": 3.5,
+      "rentalWindow": "not stated on the product page",
+      "feeNotes": "Homepage says professional delivery, setup, and teardown are included. Delivery fee, sales tax, and deposit are not stated on the pages read. The site says it serves the greater Central Texas area. The address on the site is in Bryan, TX.",
+      "serviceArea": "both",
+      "sourceUrl": "https://www.cstattent.com/rental-store",
+      "checkedDate": "2026-11-22",
+      "status": "priced",
+      "notes": ""
+    },
+    {
+      "company": "College Station Tent and Event Rentals",
+      "item": "6' Plastic Table",
+      "category": "table",
+      "size": "",
+      "price": 12,
+      "rentalWindow": "not stated on the product page",
+      "feeNotes": "Homepage says professional delivery, setup, and teardown are included. Delivery fee, sales tax, and deposit are not stated on the pages read. The site says it serves the greater Central Texas area. The address on the site is in Bryan, TX.",
+      "serviceArea": "both",
+      "sourceUrl": "https://www.cstattent.com/rental-store",
+      "checkedDate": "2026-11-22",
+      "status": "priced",
+      "notes": ""
+    },
+    {
+      "company": "College Station Tent and Event Rentals",
+      "item": "8' Plastic Table",
+      "category": "table",
+      "size": "",
+      "price": 12,
+      "rentalWindow": "not stated on the product page",
+      "feeNotes": "Homepage says professional delivery, setup, and teardown are included. Delivery fee, sales tax, and deposit are not stated on the pages read. The site says it serves the greater Central Texas area. The address on the site is in Bryan, TX.",
+      "serviceArea": "both",
+      "sourceUrl": "https://www.cstattent.com/rental-store",
+      "checkedDate": "2026-11-22",
+      "status": "priced",
+      "notes": ""
+    },
+    {
+      "company": "College Station Tent and Event Rentals",
+      "item": "5' Round Table",
+      "category": "table",
+      "size": "",
+      "price": 12,
+      "rentalWindow": "not stated on the product page",
+      "feeNotes": "Homepage says professional delivery, setup, and teardown are included. Delivery fee, sales tax, and deposit are not stated on the pages read. The site says it serves the greater Central Texas area. The address on the site is in Bryan, TX.",
+      "serviceArea": "both",
+      "sourceUrl": "https://www.cstattent.com/rental-store/p/the-ember-vessel-ywbkw-skg45",
+      "checkedDate": "2026-11-22",
+      "status": "priced",
+      "notes": ""
+    },
+    {
+      "company": "College Station Tent and Event Rentals",
+      "item": "30'' Cocktail Table",
+      "category": "table",
+      "size": "",
+      "price": 12,
+      "rentalWindow": "not stated on the product page",
+      "feeNotes": "Homepage says professional delivery, setup, and teardown are included. Delivery fee, sales tax, and deposit are not stated on the pages read. The site says it serves the greater Central Texas area. The address on the site is in Bryan, TX.",
+      "serviceArea": "both",
+      "sourceUrl": "https://www.cstattent.com/rental-store",
+      "checkedDate": "2026-11-22",
+      "status": "priced",
+      "notes": ""
+    },
+    {
+      "company": "BCS Party Rentals",
+      "item": "6' White Rectangular Table",
+      "category": "table",
+      "size": "",
+      "price": null,
+      "rentalWindow": "",
+      "feeNotes": "Not listed",
+      "serviceArea": "both",
+      "sourceUrl": "https://www.bcspartyrental.com/category/tables_and_chairs/",
+      "checkedDate": "2026-11-22",
+      "status": "unverified",
+      "notes": "Page would not load on 2026-11-22; price not confirmed"
+    },
+    {
+      "company": "BCS Party Rentals",
+      "item": "Beige Folding Chairs",
+      "category": "chair",
+      "size": "",
+      "price": null,
+      "rentalWindow": "",
+      "feeNotes": "Not listed",
+      "serviceArea": "both",
+      "sourceUrl": "https://www.bcspartyrental.com/category/tables_and_chairs/",
+      "checkedDate": "2026-11-22",
+      "status": "unverified",
+      "notes": "Page would not load on 2026-11-22; price not confirmed"
     }
   ]
 }

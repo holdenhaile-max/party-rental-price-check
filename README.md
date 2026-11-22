@@ -2,7 +2,7 @@
 
 Party rental prices, checked.
 
-A dated comparison of published party rental prices for College Station and Bryan, Texas. Every price comes from the company's own public page. Prices were checked Nov 19 to Nov 21, 2026. Each row keeps its own checked date. The site does not estimate a missing number.
+A dated comparison of published party rental prices for College Station and Bryan, Texas. Every price comes from the company's own public page. Prices were checked Nov 19 to Nov 22, 2026. Each row keeps its own checked date. The site does not estimate a missing number.
 
 Live site: https://holdenhaile-max.github.io/party-rental-price-check/
 
@@ -14,10 +14,11 @@ Live site: https://holdenhaile-max.github.io/party-rental-price-check/
 - Water slide and wet inflatable prices
 - Graduation party rental prices
 - Tent rental prices
+- Table and chair rental comparison
 - What's included: delivery, setup, time window, and fees
 - About
 
-Coming soon, with no prices written yet: a table and chair rental comparison, and the cheapest backyard birthday bounce house.
+Coming soon, with no prices written yet: the cheapest backyard birthday bounce house.
 
 ## Develop
 

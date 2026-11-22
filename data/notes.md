@@ -16,7 +16,21 @@ On 2026-11-21 these published prices were read again and were unchanged, so only
 
 19 rows were reread. No prices changed.
 
-Other rows stay on 2026-11-19, including Bounce House Rentals BCS LLC tables and chairs. Prices come only from each company's own public website. Third-party aggregator prices were not used. No prices were estimated. When a page showed only a starting-at or "from" figure, that is what was recorded, with the wording preserved in the rental window or notes column.
+On 2026-11-22 these published prices were read again and were unchanged, so only `checked_date` was set to 2026-11-22:
+
+- Aggieland Bounce Houses & Beyond: The Drop Top ($145 for 1-4 hours, $195 for 5-8 hours, $275 per day)
+- Mission Inflatables: Castle Bounce House ($175), Mickey Park Jump (large) ($175), Palm Tree Bounce ($175), Pretty Princess ($175), Super castle ($175), 6' Tables ($14), 8' Table ($16), Chairs ($2.50). High Density Fog still shows $0.00 and stays unverified with a blank price.
+- Koozie's Premier Party Rentals: Happy Birthday Bounce House ($135), Lego Master Bounce House with Basketball Hoop ($150), King Bounce House Combo dry ($275) and wet ($250). The King page still says "Rental $275 flat rate Dry / 250 Wet."
+- Jump Around BCS: Lava Bounce House ($95), Princess Castle 2 ($95), Princess Castle 3 ($95), All American Bounce House ($95), 6ft Tables ($12), Chairs ($2). Toddler Play Zone Dry still shows $0.00 with no item header and stays unverified with a blank price.
+- Bounce House Rentals BCS LLC: All American Bounce House ($85), Bounce House 2 ($85), Lava Bounce House ($85), Princess Castle 2 ($85), 6ft Tables ($10), Chairs ($1.50)
+
+29 rows were reread. No prices changed. No priced row became unverified.
+
+College Station Tent and Event Rentals was added from its own site on 2026-11-22: White Metal Folding Chair ($2.25), White Resin Folding Chair ($3.50), 6' Plastic Table ($12), 8' Plastic Table ($12), 5' Round Table ($12), and 30'' Cocktail Table ($12). The rental window is not stated on the product page. The homepage says professional delivery, setup, and teardown are included. A delivery fee, tax, and deposit are not stated.
+
+BCS Party Rentals: the tables and chairs page would not load on 2026-11-22 (HTTP 500 / no connection). 6' White Rectangular Table and Beige Folding Chairs were added as unverified rows with a blank price. No price was written for them.
+
+Other rows stay on their earlier checked date. Prices come only from each company's own public website. Third-party aggregator prices were not used. No prices were estimated. When a page showed only a starting-at or "from" figure, that is what was recorded, with the wording preserved in the rental window or notes column.
 
 CSV path: `data/prices-2026-11-19.csv`. The filename stays the original snapshot name. It is not renamed when a later check updates a row date.
 

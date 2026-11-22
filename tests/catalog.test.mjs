@@ -11,8 +11,8 @@ const catalog = JSON.parse(readFileSync(new URL("../src/data/catalog.json", impo
 const csv = parseCsv(readFileSync(new URL("../data/prices-2026-11-19.csv", import.meta.url), "utf8"));
 
 test("catalog prices match the collected CSV", () => {
-  assert.equal(catalog.prices.length, 294);
-  assert.equal(csv.length, 294);
+  assert.equal(catalog.prices.length, 302);
+  assert.equal(csv.length, 302);
   catalog.prices.forEach((row, index) => {
     const source = csv[index];
     assert.equal(row.company, source.company);
@@ -53,6 +53,7 @@ test("launch pages keep the collected row counts", () => {
     "water-slides": 51,
     "graduation-party-rentals": 8,
     "tent-rentals": 3,
+    "table-and-chair-rental-comparison": 15,
   });
 });
 
@@ -69,23 +70,61 @@ test("Bryan bounce houses leave off the company that does not name Bryan", () =>
   assert.equal(collegeStation.some((row) => row.company === "Bounce House Rentals BCS LLC"), true);
 });
 
-test("unverified rows are the three item pages with no price", () => {
+test("unverified rows are the item pages with no price", () => {
   const rows = unverifiedPrices(catalog.prices);
   assert.deepEqual(
     rows.map((row) => row.item).sort(),
-    ["High Density Fog", "Large Event Foam Experiences", "Toddler Play Zone Dry"],
+    [
+      "6' White Rectangular Table",
+      "Beige Folding Chairs",
+      "High Density Fog",
+      "Large Event Foam Experiences",
+      "Toddler Play Zone Dry",
+    ],
   );
+  for (const item of ["6' White Rectangular Table", "Beige Folding Chairs", "High Density Fog", "Toddler Play Zone Dry"]) {
+    const row = rows.find((entry) => entry.item === item);
+    assert.equal(row.price, null);
+    assert.equal(row.checkedDate, "2026-11-22");
+  }
 });
 
 const nov20Rows = [
-  { company: "Mission Inflatables", item: "Chairs", price: 2.5, rentalWindow: "all day (listing 'from' price; sampled product pages show the same amount from 1 hour through per day)" },
-  { company: "Mission Inflatables", item: "6' Tables", price: 14 },
-  { company: "Mission Inflatables", item: "8' Table", price: 16 },
-  { company: "Jump Around BCS", item: "6ft Tables", price: 12 },
-  { company: "Jump Around BCS", item: "Chairs", price: 2 },
   { company: "The Backyard Jump", item: "Marble Rush Bounce House", price: 150 },
   { company: "Aggieland Bounce Houses & Beyond", item: "The Bouncer XL", price: 165, rentalWindow: "1-4 hr" },
   { company: "Aggieland Bounce Houses & Beyond", item: "The Bouncer XL", price: 215, rentalWindow: "5-16 hr / per day" },
+];
+
+const nov22Rows = [
+  { company: "Aggieland Bounce Houses & Beyond", item: "The Drop Top", price: 145, rentalWindow: "1-4 hr" },
+  { company: "Aggieland Bounce Houses & Beyond", item: "The Drop Top", price: 195, rentalWindow: "5-8 hr" },
+  { company: "Aggieland Bounce Houses & Beyond", item: "The Drop Top", price: 275, rentalWindow: "per day" },
+  { company: "Mission Inflatables", item: "Castle Bounce House", price: 175 },
+  { company: "Mission Inflatables", item: "Mickey Park Jump (large)", price: 175 },
+  { company: "Mission Inflatables", item: "Palm Tree Bounce", price: 175 },
+  { company: "Mission Inflatables", item: "Pretty Princess", price: 175 },
+  { company: "Mission Inflatables", item: "Super castle", price: 175 },
+  { company: "Mission Inflatables", item: "High Density Fog", price: null },
+  { company: "Koozie's Premier Party Rentals", item: "Happy Birthday Bounce House", price: 135 },
+  { company: "Koozie's Premier Party Rentals", item: "Lego Master Bounce House with Basketball Hoop", price: 150 },
+  { company: "Koozie's Premier Party Rentals", item: "King Bounce House Combo (dry)", price: 275 },
+  { company: "Koozie's Premier Party Rentals", item: "King Bounce House Combo (wet)", price: 250 },
+  { company: "Jump Around BCS", item: "Lava Bounce House", price: 95 },
+  { company: "Jump Around BCS", item: "Princess Castle 2", price: 95 },
+  { company: "Jump Around BCS", item: "Princess Castle 3", price: 95 },
+  { company: "Jump Around BCS", item: "All American Bounce House", price: 95 },
+  { company: "Jump Around BCS", item: "Toddler Play Zone Dry", price: null },
+  { company: "Bounce House Rentals BCS LLC", item: "All American Bounce House", price: 85 },
+  { company: "Bounce House Rentals BCS LLC", item: "Bounce House 2", price: 85 },
+  { company: "Bounce House Rentals BCS LLC", item: "Lava Bounce House", price: 85 },
+  { company: "Bounce House Rentals BCS LLC", item: "Princess Castle 2", price: 85 },
+  { company: "Mission Inflatables", item: "6' Tables", price: 14 },
+  { company: "Mission Inflatables", item: "8' Table", price: 16 },
+  { company: "Mission Inflatables", item: "Chairs", price: 2.5 },
+  { company: "Jump Around BCS", item: "6ft Tables", price: 12 },
+  { company: "Jump Around BCS", item: "Chairs", price: 2 },
+  { company: "Bounce House Rentals BCS LLC", item: "6ft Tables", price: 10 },
+  { company: "Bounce House Rentals BCS LLC", item: "Chairs", price: 1.5 },
 ];
 
 const nov21Rows = [
@@ -141,18 +180,25 @@ function assertChecked(expectedRows, date) {
   }
 }
 
-test("rechecked rows keep their prices on 2026-11-20 and 2026-11-21", () => {
-  assert.equal(nov20Rows.length, 8);
+test("rechecked rows keep their prices on 2026-11-20, 2026-11-21, and 2026-11-22", () => {
+  assert.equal(nov20Rows.length, 3);
   assert.equal(nov21Rows.length, 19);
+  assert.equal(nov22Rows.length, 29);
   assertChecked(nov20Rows, "2026-11-20");
   assertChecked(nov21Rows, "2026-11-21");
+  assertChecked(nov22Rows, "2026-11-22");
 
   const touched = catalog.prices.filter((row) =>
-    [...nov20Rows, ...nov21Rows].some((expected) => samePrice(row, expected)),
+    [...nov20Rows, ...nov21Rows, ...nov22Rows].some((expected) => samePrice(row, expected)),
   );
-  assert.equal(touched.length, 27);
-  const others = catalog.prices.filter((row) => !touched.includes(row));
-  assert.equal(others.length, 267);
+  assert.equal(touched.length, 51);
+  const added = catalog.prices.filter(
+    (row) => row.company === "College Station Tent and Event Rentals" || row.company === "BCS Party Rentals",
+  );
+  assert.equal(added.length, 8);
+  assert.ok(added.every((row) => row.checkedDate === "2026-11-22"));
+  const others = catalog.prices.filter((row) => !touched.includes(row) && !added.includes(row));
+  assert.equal(others.length, 243);
   assert.ok(others.every((row) => row.checkedDate === "2026-11-19"));
 
   const lucky = catalog.prices.find(
@@ -181,7 +227,7 @@ test("company filter drops Bounce House Rentals BCS LLC from tent, table, and ch
   );
   assert.equal(rows.length, 8);
   assert.equal(
-    rows.every((row) => row.checkedDate === (row.category === "tent" ? "2026-11-21" : "2026-11-20")),
+    rows.every((row) => row.checkedDate === (row.category === "tent" ? "2026-11-21" : "2026-11-22")),
     true,
   );
   assert.equal(rows.every((row) => row.sourceUrl.startsWith("https://")), true);
@@ -226,7 +272,7 @@ test("graduation page lists published tent, table, and chair prices", () => {
     "$50 deposit",
     "calculated at checkout",
     "not computed or estimated",
-    "Nov 20, 2026",
+    "Nov 22, 2026",
     "anchoring",
   ]) {
     assert.equal(blob.includes(phrase), true, phrase);
@@ -316,6 +362,97 @@ test("tent page lists the three published tent prices", () => {
   );
 });
 
+test("table and chair page lists published prices and blank unverified rows", () => {
+  const page = pages.find((entry) => entry.slug === "table-and-chair-rental-comparison");
+  assert.ok(page);
+  assert.equal(page.kind, "prices");
+  assert.equal(page.nav, "Tables and chairs");
+  assert.equal(page.title, "Table and chair rental comparison");
+  assert.equal(page.h1, "Table and chair rental comparison");
+  assert.equal(page.city, undefined);
+  assert.equal(page.companies, undefined);
+  assert.deepEqual(page.categories, ["table", "chair"]);
+  assert.ok(page.description.includes("Checked Nov 22, 2026"));
+  assert.equal(page.description.includes(" to "), false);
+  assert.ok(page.lede);
+  assert.ok(page.tableCaption);
+  assert.ok(page.after);
+  assert.ok(Array.isArray(page.faqs) && page.faqs.length >= 4 && page.faqs.length <= 5);
+
+  const blob = [
+    page.title,
+    page.description,
+    page.h1,
+    page.lede,
+    page.tableCaption,
+    page.after,
+    ...page.faqs.flatMap((faq) => [faq.question, faq.answer]),
+  ].join("\n");
+  for (const phrase of [
+    "Do prices include delivery and setup?",
+    "What is the rental window?",
+    "Is tax included?",
+    "Why are some rows unverified?",
+    "Where does each price come from?",
+    "calculated at checkout",
+    "4 hour standard rental",
+    "sales tax",
+    "$50 deposit",
+    "not stated on the product page",
+    "professional delivery, setup, and teardown are included",
+    "would not load on Nov 22, 2026",
+    "no price is filled in",
+    "Koozie's Premier Party Rentals lists no tables or chairs",
+    "10x10 canopy at $50",
+    "20x40 tent at $650",
+    "not computed or estimated",
+    "Nov 22, 2026",
+  ]) {
+    assert.equal(blob.includes(phrase), true, phrase);
+  }
+  assert.equal(blob.includes("\u2014"), false);
+  assert.equal(blob.includes("\u2013"), false);
+  assert.equal(/Aggie/i.test(blob), false);
+  assert.equal(comingSoon.includes("Table and chair rental comparison"), false);
+
+  const rows = filterPrices(catalog.prices, catalog.companies, {
+    categories: page.categories,
+  });
+  assert.equal(rows.length, 15);
+  assert.equal(rows.every((row) => row.checkedDate === "2026-11-22"), true);
+  assert.equal(rows.every((row) => row.sourceUrl.startsWith("https://")), true);
+  assert.equal(rows.some((row) => row.company === "Koozie's Premier Party Rentals"), false);
+  assert.deepEqual(
+    rows.map((row) => [row.company, row.item, row.price, row.status]).sort(),
+    [
+      ["BCS Party Rentals", "6' White Rectangular Table", null, "unverified"],
+      ["BCS Party Rentals", "Beige Folding Chairs", null, "unverified"],
+      ["Bounce House Rentals BCS LLC", "6ft Tables", 10, "priced"],
+      ["Bounce House Rentals BCS LLC", "Chairs", 1.5, "priced"],
+      ["College Station Tent and Event Rentals", "30'' Cocktail Table", 12, "priced"],
+      ["College Station Tent and Event Rentals", "5' Round Table", 12, "priced"],
+      ["College Station Tent and Event Rentals", "6' Plastic Table", 12, "priced"],
+      ["College Station Tent and Event Rentals", "8' Plastic Table", 12, "priced"],
+      ["College Station Tent and Event Rentals", "White Metal Folding Chair", 2.25, "priced"],
+      ["College Station Tent and Event Rentals", "White Resin Folding Chair", 3.5, "priced"],
+      ["Jump Around BCS", "6ft Tables", 12, "priced"],
+      ["Jump Around BCS", "Chairs", 2, "priced"],
+      ["Mission Inflatables", "6' Tables", 14, "priced"],
+      ["Mission Inflatables", "8' Table", 16, "priced"],
+      ["Mission Inflatables", "Chairs", 2.5, "priced"],
+    ].sort(),
+  );
+  const round = rows.find((row) => row.item === "5' Round Table");
+  assert.equal(round.sourceUrl, "https://www.cstattent.com/rental-store/p/the-ember-vessel-ywbkw-skg45");
+  const metal = rows.find((row) => row.item === "White Metal Folding Chair");
+  assert.equal(metal.sourceUrl, "https://www.cstattent.com/rental-store");
+  assert.equal(metal.rentalWindow, "not stated on the product page");
+  const failed = rows.find((row) => row.item === "6' White Rectangular Table");
+  assert.equal(failed.price, null);
+  assert.equal(failed.notes, "Page would not load on 2026-11-22; price not confirmed");
+  assert.equal(failed.sourceUrl, "https://www.bcspartyrental.com/category/tables_and_chairs/");
+});
+
 test("price page descriptions match the checked dates on their rows", () => {
   for (const page of pages.filter((entry) => entry.kind === "prices")) {
     const rows = filterPrices(catalog.prices, catalog.companies, {
@@ -347,19 +484,29 @@ test("site copy does not claim every price was read only on Nov 19", () => {
     assert.equal(text.includes("\u2014"), false, name);
     assert.equal(text.includes("\u2013"), false, name);
   }
-  assert.equal(home.includes("Nov 19 to Nov 21, 2026"), true);
-  assert.equal(about.includes("Nov 19 to Nov 21, 2026"), true);
-  assert.equal(readme.includes("Nov 19 to Nov 21, 2026"), true);
+  assert.equal(home.includes("Nov 19 to Nov 22, 2026"), true);
+  assert.equal(about.includes("Nov 19 to Nov 22, 2026"), true);
+  assert.equal(readme.includes("Nov 19 to Nov 22, 2026"), true);
+  assert.equal(home.includes("Nov 19 to Nov 21, 2026"), false);
+  assert.equal(about.includes("Nov 19 to Nov 21, 2026"), false);
+  assert.equal(readme.includes("Nov 19 to Nov 21, 2026"), false);
   assert.equal(home.includes("Nov 19 to Nov 20, 2026"), false);
   assert.equal(about.includes("Nov 19 to Nov 20, 2026"), false);
   assert.equal(readme.includes("Nov 19 to Nov 20, 2026"), false);
   assert.equal(readme.includes("Graduation party rental prices"), true);
   assert.equal(readme.includes("Tent rental prices"), true);
+  assert.equal(readme.includes("Table and chair rental comparison"), true);
   assert.equal(/Coming soon[\s\S]*graduation party rentals/i.test(readme), false);
   assert.equal(/Coming soon[\s\S]*tent rental prices/i.test(readme), false);
+  assert.equal(/Coming soon[\s\S]*table and chair/i.test(readme), false);
   assert.equal(comingSoon.includes("Tent rental prices"), false);
+  assert.equal(comingSoon.includes("Table and chair rental comparison"), false);
+  assert.equal(comingSoon.includes("Cheapest backyard birthday bounce house"), true);
   assert.equal(notes.includes("2026-11-20"), true);
   assert.equal(notes.includes("2026-11-21"), true);
+  assert.equal(notes.includes("2026-11-22"), true);
+  assert.equal(notes.includes("would not load"), true);
+  assert.equal(notes.includes("No prices changed"), true);
   assert.equal(notes.includes("prices-2026-11-19.csv"), true);
   assert.equal(home.includes("Graduation party rentals, tents"), false);
 });
