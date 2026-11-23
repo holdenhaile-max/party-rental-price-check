@@ -44,12 +44,14 @@ test("launch pages keep the collected row counts", () => {
           categories: page.categories,
           city: page.city,
           companies: page.companies,
+          status: page.status,
         }).length,
       ]),
   );
   assert.deepEqual(counts, {
     "bounce-houses-college-station": 48,
     "bounce-houses-bryan": 42,
+    "cheapest-backyard-birthday-bounce-house": 48,
     "water-slides": 51,
     "graduation-party-rentals": 8,
     "tent-rentals": 3,
@@ -149,6 +151,16 @@ const nov21Rows = [
   { company: "Koozie's Premier Party Rentals", item: "Canopy", price: 50 },
 ];
 
+const nov23Rows = [
+  { company: "Bounce House Rentals BCS LLC", item: "Princess Castle 3", price: 85 },
+  { company: "Jumpin' Jehoshaphat Inflatables", item: "Jolly Jester's Castle", price: 100 },
+  { company: "Jumpin' Jehoshaphat Inflatables", item: "Royal Bounce Palace", price: 100 },
+  { company: "Jumpin' Jehoshaphat Inflatables", item: "Fairy Tale Castle", price: 100 },
+  { company: "Jumpin' Jehoshaphat Inflatables", item: "Rocket Blast Bounce", price: 100 },
+  { company: "Bounce House Rentals BCS LLC", item: "Halloween Bounce House", price: 125 },
+  { company: "Jumpin' Jehoshaphat Inflatables", item: "Jolly Jester's Castle", price: 125 },
+];
+
 function samePrice(row, expected) {
   return (
     row.company === expected.company &&
@@ -180,25 +192,27 @@ function assertChecked(expectedRows, date) {
   }
 }
 
-test("rechecked rows keep their prices on 2026-11-20, 2026-11-21, and 2026-11-22", () => {
+test("rechecked rows keep their prices on 2026-11-20, 2026-11-21, 2026-11-22, and 2026-11-23", () => {
   assert.equal(nov20Rows.length, 3);
   assert.equal(nov21Rows.length, 19);
   assert.equal(nov22Rows.length, 29);
+  assert.equal(nov23Rows.length, 7);
   assertChecked(nov20Rows, "2026-11-20");
   assertChecked(nov21Rows, "2026-11-21");
   assertChecked(nov22Rows, "2026-11-22");
+  assertChecked(nov23Rows, "2026-11-23");
 
   const touched = catalog.prices.filter((row) =>
-    [...nov20Rows, ...nov21Rows, ...nov22Rows].some((expected) => samePrice(row, expected)),
+    [...nov20Rows, ...nov21Rows, ...nov22Rows, ...nov23Rows].some((expected) => samePrice(row, expected)),
   );
-  assert.equal(touched.length, 51);
+  assert.equal(touched.length, 58);
   const added = catalog.prices.filter(
     (row) => row.company === "College Station Tent and Event Rentals" || row.company === "BCS Party Rentals",
   );
   assert.equal(added.length, 8);
   assert.ok(added.every((row) => row.checkedDate === "2026-11-22"));
   const others = catalog.prices.filter((row) => !touched.includes(row) && !added.includes(row));
-  assert.equal(others.length, 243);
+  assert.equal(others.length, 236);
   assert.ok(others.every((row) => row.checkedDate === "2026-11-19"));
 
   const lucky = catalog.prices.find(
@@ -484,9 +498,12 @@ test("site copy does not claim every price was read only on Nov 19", () => {
     assert.equal(text.includes("\u2014"), false, name);
     assert.equal(text.includes("\u2013"), false, name);
   }
-  assert.equal(home.includes("Nov 19 to Nov 22, 2026"), true);
-  assert.equal(about.includes("Nov 19 to Nov 22, 2026"), true);
-  assert.equal(readme.includes("Nov 19 to Nov 22, 2026"), true);
+  assert.equal(home.includes("Nov 19 to Nov 23, 2026"), true);
+  assert.equal(about.includes("Nov 19 to Nov 23, 2026"), true);
+  assert.equal(readme.includes("Nov 19 to Nov 23, 2026"), true);
+  assert.equal(home.includes("Nov 19 to Nov 22, 2026"), false);
+  assert.equal(about.includes("Nov 19 to Nov 22, 2026"), false);
+  assert.equal(readme.includes("Nov 19 to Nov 22, 2026"), false);
   assert.equal(home.includes("Nov 19 to Nov 21, 2026"), false);
   assert.equal(about.includes("Nov 19 to Nov 21, 2026"), false);
   assert.equal(readme.includes("Nov 19 to Nov 21, 2026"), false);
@@ -496,19 +513,138 @@ test("site copy does not claim every price was read only on Nov 19", () => {
   assert.equal(readme.includes("Graduation party rental prices"), true);
   assert.equal(readme.includes("Tent rental prices"), true);
   assert.equal(readme.includes("Table and chair rental comparison"), true);
+  assert.equal(readme.includes("Cheapest backyard birthday bounce house"), true);
   assert.equal(/Coming soon[\s\S]*graduation party rentals/i.test(readme), false);
   assert.equal(/Coming soon[\s\S]*tent rental prices/i.test(readme), false);
   assert.equal(/Coming soon[\s\S]*table and chair/i.test(readme), false);
+  assert.equal(/Coming soon[\s\S]*cheapest backyard/i.test(readme), false);
   assert.equal(comingSoon.includes("Tent rental prices"), false);
   assert.equal(comingSoon.includes("Table and chair rental comparison"), false);
-  assert.equal(comingSoon.includes("Cheapest backyard birthday bounce house"), true);
+  assert.equal(comingSoon.includes("Cheapest backyard birthday bounce house"), false);
   assert.equal(notes.includes("2026-11-20"), true);
   assert.equal(notes.includes("2026-11-21"), true);
   assert.equal(notes.includes("2026-11-22"), true);
+  assert.equal(notes.includes("2026-11-23"), true);
   assert.equal(notes.includes("would not load"), true);
   assert.equal(notes.includes("No prices changed"), true);
   assert.equal(notes.includes("prices-2026-11-19.csv"), true);
   assert.equal(home.includes("Graduation party rentals, tents"), false);
+});
+
+test("cheapest backyard bounce house page is derived from priced bounce houses", () => {
+  const page = pages.find((entry) => entry.slug === "cheapest-backyard-birthday-bounce-house");
+  assert.ok(page);
+  assert.equal(page.kind, "prices");
+  assert.equal(page.nav, "Cheapest bounce house");
+  assert.equal(page.title, "Cheapest backyard birthday bounce house");
+  assert.equal(page.h1, "Cheapest backyard birthday bounce house");
+  assert.equal(page.city, undefined);
+  assert.equal(page.companies, undefined);
+  assert.deepEqual(page.categories, ["bounce house"]);
+  assert.equal(page.status, "priced");
+  assert.ok(page.lede);
+  assert.ok(page.after);
+  assert.ok(page.tableCaption);
+  assert.ok(Array.isArray(page.faqs) && page.faqs.length >= 4 && page.faqs.length <= 5);
+
+  const rows = filterPrices(catalog.prices, catalog.companies, {
+    categories: page.categories,
+    city: page.city,
+    companies: page.companies,
+    status: page.status,
+  });
+  assert.equal(rows.length, 48);
+  assert.equal(rows.every((row) => row.category === "bounce house" && row.status === "priced" && row.price > 0), true);
+  const span = checkedSpan(rows.map((row) => row.checkedDate));
+  assert.equal(span, "Nov 19 to Nov 23, 2026");
+  assert.equal(page.description.includes(span), true);
+  assert.equal(page.description.includes("where stated"), true);
+
+  const ordered = rows
+    .map((row, index) => ({ row, index }))
+    .sort((a, b) => a.row.price - b.row.price || a.index - b.index)
+    .map((item) => item.row);
+  const tiers = [];
+  for (const row of ordered) {
+    let tier = tiers.find((item) => item.price === row.price);
+    if (!tier) {
+      tier = { price: row.price, companies: [] };
+      tiers.push(tier);
+    }
+    if (!tier.companies.includes(row.company)) tier.companies.push(row.company);
+  }
+  assert.deepEqual(
+    tiers.slice(0, 3).map((tier) => [tier.price, tier.companies]),
+    [
+      [85, ["Bounce House Rentals BCS LLC"]],
+      [95, ["Jump Around BCS"]],
+      [100, ["Jumpin' Jehoshaphat Inflatables"]],
+    ],
+  );
+
+  const blob = [
+    page.title,
+    page.description,
+    page.h1,
+    page.lede,
+    page.tableCaption,
+    page.after,
+    ...page.faqs.flatMap((faq) => [faq.question, faq.answer]),
+  ].join("\n");
+  for (const phrase of [
+    "$85",
+    "$95",
+    "$100",
+    "Bounce House Rentals BCS LLC",
+    "Jump Around BCS",
+    "Jumpin' Jehoshaphat Inflatables",
+    "Delivery fees and tax are extra where a company states them",
+    "no slide attached",
+    "What is the lowest price?",
+    "Are delivery fees and tax included?",
+    "Are bounce houses with a slide included?",
+    "Why does one bounce house have more than one row?",
+    "Do all of these companies deliver in Bryan?",
+  ]) {
+    assert.equal(blob.includes(phrase), true, phrase);
+  }
+  assert.equal(blob.includes("\u2014"), false);
+  assert.equal(blob.includes("\u2013"), false);
+  assert.equal(/Aggie/i.test(blob), false);
+  const amounts = [...blob.matchAll(/\$(\d+(?:\.\d+)?)/g)].map((match) => Number(match[1]));
+  assert.ok(amounts.length >= 3);
+  for (const amount of amounts) {
+    assert.equal(rows.some((row) => row.price === amount), true, String(amount));
+  }
+
+  const pagesSource = readFileSync(new URL("../src/data/pages.mjs", import.meta.url), "utf8");
+  const helperSource = readFileSync(new URL("../src/lib/cheapest-bounce.mjs", import.meta.url), "utf8");
+  assert.equal(pagesSource.includes("$85"), false);
+  assert.equal(helperSource.includes("$85"), false);
+  assert.equal(pagesSource.includes("Jumpin' Jehoshaphat"), false);
+});
+
+test("Nov 23 recheck is the priced bounce houses still dated Nov 19 among the 15 cheapest", () => {
+  const priced = catalog.prices
+    .map((row, index) => ({ row, index }))
+    .filter(({ row }) => row.category === "bounce house" && row.status === "priced")
+    .sort((a, b) => a.row.price - b.row.price || a.index - b.index)
+    .slice(0, 15)
+    .map((item) => item.row);
+  assert.equal(priced.length, 15);
+  const refreshed = priced.filter((row) => nov23Rows.some((expected) => samePrice(row, expected)));
+  assert.equal(refreshed.length, 7);
+  assert.equal(refreshed.every((row) => row.checkedDate === "2026-11-23"), true);
+  const earlier = priced.filter((row) => !refreshed.includes(row));
+  assert.equal(earlier.length, 8);
+  assert.equal(earlier.every((row) => row.checkedDate === "2026-11-22"), true);
+  for (const row of priced) {
+    assert.equal(row.price === 85 || row.price === 95 || row.price === 100 || row.price === 125, true);
+  }
+  const span = checkedSpan(catalog.prices.map((row) => row.checkedDate));
+  assert.equal(span, "Nov 19 to Nov 23, 2026");
+  assert.equal(catalog.checkedDate, "2026-11-19");
+  assert.equal(catalog.checkedLabel, `Checked ${span}`);
 });
 
 test("internal links keep the GitHub Pages base path", () => {

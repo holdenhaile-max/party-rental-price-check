@@ -26,6 +26,13 @@ On 2026-11-22 these published prices were read again and were unchanged, so only
 
 29 rows were reread. No prices changed. No priced row became unverified.
 
+On 2026-11-23 these published bounce house prices were read again on each company's own page and were unchanged, so only `checked_date` was set to 2026-11-23. The rows are the priced bounce houses that were still dated 2026-11-19 among the 15 cheapest, sorted by price with ties left in file order:
+
+- Bounce House Rentals BCS LLC: Princess Castle 3 ($85), Halloween Bounce House ($125)
+- Jumpin' Jehoshaphat Inflatables: Jolly Jester's Castle ($100 for up to 4 hours, and $125 for 4-6 hours), Royal Bounce Palace ($100 for up to 4 hours), Fairy Tale Castle ($100 for up to 4 hours), Rocket Blast Bounce ($100 for up to 4 hours)
+
+7 rows were reread. No prices changed. Longer rental windows for those Jumpin' Jehoshaphat houses stayed on their earlier checked date.
+
 College Station Tent and Event Rentals was added from its own site on 2026-11-22: White Metal Folding Chair ($2.25), White Resin Folding Chair ($3.50), 6' Plastic Table ($12), 8' Plastic Table ($12), 5' Round Table ($12), and 30'' Cocktail Table ($12). The rental window is not stated on the product page. The homepage says professional delivery, setup, and teardown are included. A delivery fee, tax, and deposit are not stated.
 
 BCS Party Rentals: the tables and chairs page would not load on 2026-11-22 (HTTP 500 / no connection). 6' White Rectangular Table and Beige Folding Chairs were added as unverified rows with a blank price. No price was written for them.

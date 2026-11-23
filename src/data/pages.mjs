@@ -1,16 +1,18 @@
 /** @typedef {{ question: string, answer: string, href?: string, linkLabel?: string }} Faq */
 
+import catalog from "./catalog.json" with { type: "json" };
+import { buildCheapestBouncePage } from "../lib/cheapest-bounce.mjs";
+
 /**
  * Add a page by appending an object here.
  * `kind: "prices"` needs `categories` and an optional `city` (`college-station` or `bryan`).
  * Optional `companies` is a list of company names. When it is set, other companies are left off.
+ * Optional `status` (for example `"priced"`) keeps other statuses off the table.
  * `kind: "companies"` renders the delivery and fees table.
  * Set `nav` to show the page in the header. Home cards use every entry in this list.
  */
 
-export const comingSoon = [
-  "Cheapest backyard birthday bounce house",
-];
+export const comingSoon = [];
 
 /** @type {Array<Record<string, any>>} */
 export const pages = [
@@ -20,7 +22,7 @@ export const pages = [
     nav: "College Station",
     title: "Bounce house prices in College Station",
     description:
-      "Bounce house rental prices in College Station, TX from each company's own website. Size, rental window, delivery, and price. Checked Nov 19 to Nov 22, 2026.",
+      "Bounce house rental prices in College Station, TX from each company's own website. Size, rental window, delivery, and price. Checked Nov 19 to Nov 23, 2026.",
     eyebrow: "College Station",
     h1: "Bounce house prices in College Station",
     lede:
@@ -61,7 +63,7 @@ export const pages = [
     nav: "Bryan",
     title: "Bounce house prices in Bryan",
     description:
-      "Bounce house rental prices for companies that serve Bryan, TX. Size, rental window, delivery, and price from each company's own site. Checked Nov 19 to Nov 22, 2026.",
+      "Bounce house rental prices for companies that serve Bryan, TX. Size, rental window, delivery, and price from each company's own site. Checked Nov 19 to Nov 23, 2026.",
     eyebrow: "Bryan",
     h1: "Bounce house prices in Bryan",
     lede:
@@ -91,6 +93,7 @@ export const pages = [
       },
     ],
   },
+  buildCheapestBouncePage(catalog),
   {
     slug: "water-slides",
     kind: "prices",
@@ -267,7 +270,7 @@ export const pages = [
     nav: "What's included",
     title: "What's included: delivery, setup, and fees",
     description:
-      "Delivery, setup, rental time, and fees by party rental company in College Station and Bryan. Taken from each company's own site. Checked Nov 19 to Nov 22, 2026.",
+      "Delivery, setup, rental time, and fees by party rental company in College Station and Bryan. Taken from each company's own site. Checked Nov 19 to Nov 23, 2026.",
     eyebrow: "Delivery and fees",
     h1: "What's included: delivery, setup, time window, and fees",
     lede:
