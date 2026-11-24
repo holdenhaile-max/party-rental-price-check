@@ -81,6 +81,7 @@ const companyId = new Map(catalog.companies.map((company) => [company.name, comp
             const size = textSortValue(row.size);
             const windowValue = textSortValue(row.rentalWindow);
             const unverified = row.status === "unverified";
+            const priceLabel = row.price == null ? null : money(row.price);
             const id = companyId.get(row.company);
             return (
               <tr
@@ -114,11 +115,14 @@ const companyId = new Map(catalog.companies.map((company) => [company.name, comp
                 <td class="fee-note">{listed(row.feeNotes)}</td>
                 <td>
                   {unverified ? (
-                    <span class="pill unverified">Unverified</span>
-                  ) : row.price == null ? (
+                    <>
+                      {priceLabel ? <span class="last-seen-amount">{priceLabel}</span> : null}
+                      <span class="pill unverified">Unverified</span>
+                    </>
+                  ) : priceLabel == null ? (
                     "Not listed"
                   ) : (
-                    money(row.price)
+                    priceLabel
                   )}
                 </td>
                 <td>

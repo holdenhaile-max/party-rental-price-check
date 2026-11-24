@@ -310,6 +310,10 @@ h3 {
   color: var(--amber);
 }
 
+.last-seen-amount {
+  margin-right: 0.45rem;
+}
+
 .pill.soon {
   background: var(--amber-bg);
   color: var(--amber);
