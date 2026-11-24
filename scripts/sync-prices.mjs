@@ -7,9 +7,9 @@ const rows = parseCsv(readFileSync(csvPath, "utf8"));
 const catalog = JSON.parse(readFileSync(catalogPath, "utf8"));
 
 function priceValue(raw, status) {
-  if (status !== "priced") return null;
   const text = (raw || "").trim();
   if (!text) return null;
+  if (status !== "priced" && status !== "unverified") return null;
   const num = Number(text);
   if (Number.isNaN(num)) {
     throw new Error(`Price is not a number: ${raw}`);

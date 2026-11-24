@@ -33,6 +33,18 @@ On 2026-11-23 these published bounce house prices were read again on each compan
 
 7 rows were reread. No prices changed. Longer rental windows for those Jumpin' Jehoshaphat houses stayed on their earlier checked date.
 
+On 2026-11-24 these published prices were read again on each company's own page and were unchanged, so only `checked_date` was set to 2026-11-24:
+
+- Aggieland Bounce Houses & Beyond: The OG Castle ($145 for 1-4 hours, $195 for 5-16 hours / per day)
+- Mission Inflatables: Aggieland Jump ($199), Bouncing Angels Wet or Dry Combo Slide ($350), CASTLE COMBO W/ POOL ($350)
+- Koozie's Premier Party Rentals: Princess Bounce House Combo ($275), Palm Tree Paradise ($425), 22ft Big Blue Double Lane Waterslide ($600)
+- Jump Around BCS: Halloween Bounce House ($145), Dry Castle dual lane combo ($185), Red Marble Combo Dry ($160)
+- Bounce House Rentals BCS LLC: Dry Castle dual lane combo ($175), Full Throttle Combo Dry ($225), Red Marble Combo Dry ($150)
+
+14 rows were reread. No prices changed.
+
+Aggieland Bounce Houses & Beyond Mega Block Bounce House Combo stayed at the last seen price of $350. Its product page returned 404 on 2026-11-24, so the row status is unverified and the note says "Page not found on 2026-11-24".
+
 College Station Tent and Event Rentals was added from its own site on 2026-11-22: White Metal Folding Chair ($2.25), White Resin Folding Chair ($3.50), 6' Plastic Table ($12), 8' Plastic Table ($12), 5' Round Table ($12), and 30'' Cocktail Table ($12). The rental window is not stated on the product page. The homepage says professional delivery, setup, and teardown are included. A delivery fee, tax, and deposit are not stated.
 
 BCS Party Rentals: the tables and chairs page would not load on 2026-11-22 (HTTP 500 / no connection). 6' White Rectangular Table and Beige Folding Chairs were added as unverified rows with a blank price. No price was written for them.
@@ -61,7 +73,7 @@ Booking platform: InflatableOffice.
 
 Delivery / fees: free delivery in Bryan/College Station; a delivery fee is charged more than 15 miles outside BCS. Pages also say delivery fees are calculated at checkout. Units include a tarp, blower, cord, and stakes.
 
-Mega Block Bounce House Combo is priced $350 with size 26'L x 13'W x 14'H on the Slides & Combos listing, but the product URL returned 404, so duration tiers could not be confirmed.
+Mega Block Bounce House Combo was last seen at $350 with size 26'L x 13'W x 14'H on the Slides & Combos listing. The product URL returned 404 on 2026-11-19, and again on 2026-11-24, so duration tiers could not be confirmed. The row is unverified and the last seen price stays visible.
 
 ## Koozie's Premier Party Rentals (kooziepartyrentals.com)
 
