@@ -2,7 +2,7 @@
 
 Party rental prices, checked.
 
-A dated comparison of published party rental prices for College Station and Bryan, Texas. Every price comes from the company's own public page. Prices were checked Nov 19 to Nov 24, 2026. Each row keeps its own checked date. The site does not estimate a missing number.
+A dated comparison of published party rental prices for College Station and Bryan, Texas. Every price comes from the company's own public page. Prices were checked Nov 19 to Nov 25, 2026. Each row keeps its own checked date. The site does not estimate a missing number.
 
 Live site: https://holdenhaile-max.github.io/party-rental-price-check/
 

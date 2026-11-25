@@ -45,6 +45,16 @@ On 2026-11-24 these published prices were read again on each company's own page 
 
 Aggieland Bounce Houses & Beyond Mega Block Bounce House Combo stayed at the last seen price of $350. Its product page returned 404 on 2026-11-24, so the row status is unverified and the note says "Page not found on 2026-11-24".
 
+On 2026-11-25 these published prices were read again on each company's own page and were unchanged, so only `checked_date` was set to 2026-11-25:
+
+- Aggieland Bounce Houses & Beyond: The OG Combo ($350 for 1-4 hours, $400 for 5-16 hours / per day), The Double Drop ($325 for 1-4 hours)
+- Mission Inflatables: Combo slide/castle ($350), Hangout ($350), Jungle Gym ($350)
+- Koozie's Premier Party Rentals: The Starburst ($500), 21ft Wavebender Waterslide ($400), The Superman ($700)
+- Jump Around BCS: 15ft Sunrise Dry Slide ($165), 16ft Unicorn Dry Slide ($200), 18ft Double Dry Purple Crush Slide ($275)
+- Bounce House Rentals BCS LLC: 15ft Sunrise Dry Slide ($165), 16ft Double Volcano Dry Slide ($190), 16ft Marble Dry Slide ($190)
+
+15 rows were reread. No prices changed.
+
 College Station Tent and Event Rentals was added from its own site on 2026-11-22: White Metal Folding Chair ($2.25), White Resin Folding Chair ($3.50), 6' Plastic Table ($12), 8' Plastic Table ($12), 5' Round Table ($12), and 30'' Cocktail Table ($12). The rental window is not stated on the product page. The homepage says professional delivery, setup, and teardown are included. A delivery fee, tax, and deposit are not stated.
 
 BCS Party Rentals: the tables and chairs page would not load on 2026-11-22 (HTTP 500 / no connection). 6' White Rectangular Table and Beige Folding Chairs were added as unverified rows with a blank price. No price was written for them.

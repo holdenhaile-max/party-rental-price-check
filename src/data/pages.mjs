@@ -100,7 +100,7 @@ export const pages = [
     nav: "Water slides",
     title: "Water slide and wet inflatable prices",
     description:
-      "Water slide and wet inflatable rental prices for College Station and Bryan from each company's own website. Checked Nov 19 to Nov 24, 2026.",
+      "Water slide and wet inflatable rental prices for College Station and Bryan from each company's own website. Checked Nov 19 to Nov 25, 2026.",
     eyebrow: "Water slides",
     h1: "Water slide and wet inflatable prices",
     lede:
@@ -270,7 +270,7 @@ export const pages = [
     nav: "What's included",
     title: "What's included: delivery, setup, and fees",
     description:
-      "Delivery, setup, rental time, and fees by party rental company in College Station and Bryan. Taken from each company's own site. Checked Nov 19 to Nov 24, 2026.",
+      "Delivery, setup, rental time, and fees by party rental company in College Station and Bryan. Taken from each company's own site. Checked Nov 19 to Nov 25, 2026.",
     eyebrow: "Delivery and fees",
     h1: "What's included: delivery, setup, time window, and fees",
     lede:
