@@ -55,6 +55,13 @@ On 2026-11-25 these published prices were read again on each company's own page 
 
 15 rows were reread. No prices changed.
 
+On 2026-11-26 these published prices were read again on each company's own page and were unchanged, so only `checked_date` was set to 2026-11-26:
+
+- Aggieland Bounce Houses & Beyond: The Double Drop ($375 for 5-8 hours, $500 per day), Monitor ($100 per hour)
+- Mission Inflatables: Little Sunshine Combo ($350), Marshal Mayhem (dry) ($445), Super Combo Castle 5-n-1 ($350), 15ft Flipper ($285), 15ft Fruit Roll up ($285), 15ft Island Falls ($285), 15ft Sunset Falls with pool ($285), 15ft Twin Island Falls ($425), 18ft Twin Blue Lagoon ($550), 20ft Lava Lane ($485), 20ft Palm Splash ($485), 22ft Island Falls ($525)
+
+15 rows were reread. No prices changed.
+
 College Station Tent and Event Rentals was added from its own site on 2026-11-22: White Metal Folding Chair ($2.25), White Resin Folding Chair ($3.50), 6' Plastic Table ($12), 8' Plastic Table ($12), 5' Round Table ($12), and 30'' Cocktail Table ($12). The rental window is not stated on the product page. The homepage says professional delivery, setup, and teardown are included. A delivery fee, tax, and deposit are not stated.
 
 BCS Party Rentals: the tables and chairs page would not load on 2026-11-22 (HTTP 500 / no connection). 6' White Rectangular Table and Beige Folding Chairs were added as unverified rows with a blank price. No price was written for them.
