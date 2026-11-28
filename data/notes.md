@@ -68,6 +68,13 @@ On 2026-11-27 these published prices were read again on each company's own page 
 
 15 rows were reread. No prices changed.
 
+On 2026-11-28 these published prices were read again on each company's own page and were unchanged, so only `checked_date` was set to 2026-11-28:
+
+- Mission Inflatables: LARGE EVENT GENERATORS 10 RENTALS ($575), M.I. Gaming Experience ($500), NINJA RUN (Brazos Fun Run) ($425), PATIO HEATER ($165), Popcorn machine ($149), Sno Cone ($149), Snowball Toss dual lane ($300), Speaker with microphone (Bluetooth) ($65), Tailgate Challenge ($225), VELCRO WALL ($485), World of Sports ($550), Football Toss ($285). Each product page still shows that amount from 1 hour through per day.
+- Koozie's Premier Party Rentals: 18ft Dolphin Waterslide Wet/Dry ($375), 18ft Lil Red Waterslide Wet/Dry ($375), 18ft Pirate Ship Waterslide Wet/Dry ($400). The pages show Rental $375 wet/dry, Rental $375 Wet/Dry, and Rental $400 Wet/Dry.
+
+15 rows were reread. No prices changed.
+
 College Station Tent and Event Rentals was added from its own site on 2026-11-22: White Metal Folding Chair ($2.25), White Resin Folding Chair ($3.50), 6' Plastic Table ($12), 8' Plastic Table ($12), 5' Round Table ($12), and 30'' Cocktail Table ($12). The rental window is not stated on the product page. The homepage says professional delivery, setup, and teardown are included. A delivery fee, tax, and deposit are not stated.
 
 BCS Party Rentals: the tables and chairs page would not load on 2026-11-22 (HTTP 500 / no connection). 6' White Rectangular Table and Beige Folding Chairs were added as unverified rows with a blank price. No price was written for them.
